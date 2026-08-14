@@ -1,0 +1,26 @@
+@use '../../styles/colors.scss' as *;
+@use '../../styles/fonts.scss' as *;
+
+.rawContent {
+    transition: height 500ms;
+    overflow: hidden;
+    height: 110vw;
+}
+
+.cvData {
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    .title {
+        text-align: center;
+        text-transform: capitalize;
+        transition: font-family 300ms;
+        font-family: $font-cursive2;
+
+        &:hover {
+            font-family: $font-cursive1;
+        }
+    }
+}

@@ -4,8 +4,10 @@ import { UIStateContext } from "./uiStateContext";
 
 export default function UIStateProvider({ children }) {
   
-  const [menuState, setMenuState] = useState(false);
+  const [sidebarState, setSidebarState] = useState(false);
+
   const [magic, setMagic] = useState(false);
+  
   const [lang, setLang] = useState('es');
 
   // set magic to true
@@ -21,18 +23,18 @@ export default function UIStateProvider({ children }) {
     });
   }, []);
 
-  // Open menu AND ensure location is closed
-  const openMenu = useCallback(() => {
-    setMenuState(true);
+  // Open/Close sidebar
+  const openSidebar = useCallback(() => {
+    setSidebarState(true);
   }, []);
 
-  const closeMenu = useCallback(() => {
-    setMenuState(false);
+  const closeSidebar = useCallback(() => {
+    setSidebarState(false);
   }, []);
 
-  // Toggle menu convenience
-  const toggleMenu = useCallback(() => {
-    setMenuState(prev => {
+  // Toggle sidebar convenience
+  const toggleSidebar = useCallback(() => {
+    setSidebarState(prev => {
       const next = !prev;
       return next;
     });
@@ -43,19 +45,19 @@ export default function UIStateProvider({ children }) {
     toggleLang,
     magic,
     magicOn,
-    menuState,
-    openMenu,
-    closeMenu,
-    toggleMenu
+    sidebarState,
+    openSidebar,
+    closeSidebar,
+    toggleSidebar
   }), [
     lang,
     toggleLang,
     magic,
     magicOn,
-    menuState,
-    openMenu,
-    closeMenu,
-    toggleMenu
+    sidebarState,
+    openSidebar,
+    closeSidebar,
+    toggleSidebar
   ]);
 
   return (

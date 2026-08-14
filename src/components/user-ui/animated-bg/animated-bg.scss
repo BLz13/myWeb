@@ -1,0 +1,30 @@
+@use '../../../styles/colors.scss' as *;
+@use '../../../styles/fonts.scss' as *;
+
+@use "sass:map";
+
+.animated-background {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index:-1;
+  width: 99.99vw;
+  height: 99.99dvh;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity 500ms;
+
+
+  .bg {
+    background-image: map.get($animated-gradient, background-image);
+    background-size: map.get($animated-gradient, background-size);
+    left: map.get($animated-gradient, left);
+    right: map.get($animated-gradient, right);
+    bottom: map.get($animated-gradient, bottom);
+    top: map.get($animated-gradient, top);
+    position: absolute;
+    animation: slide 5s ease-in-out infinite alternate;
+  }
+
+}

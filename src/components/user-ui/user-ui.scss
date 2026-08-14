@@ -1,16 +1,8 @@
 .user-ui {
     
-    z-index: 2;
+    z-index: 5;
     position: fixed;
     overflow: visible;
-
-    header {
-        display: grid;
-        position: relative;
-        padding: 0 5vw;
-        gap: 2.5vw;
-        width: calc(99.99vw - 10vw);
-        grid-template-columns: 9fr 1fr;
-    }
-
+    transition: opacity 500ms;
+    
 }

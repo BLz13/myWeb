@@ -1,0 +1,126 @@
+@use "../../../styles/colors.scss" as *;
+@use "../../../styles/fonts.scss" as *;
+
+@use "sass:map";
+
+$width: 7rem;
+$height: 5rem;
+
+    
+.sidebar-button-container {
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: $height;
+    width: $width;
+    aspect-ratio: 1;
+    z-index: 6;
+    cursor: pointer;
+
+    &::before {
+        position: relative;
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        left: calc(-100vw + $width);
+        top: 0;
+        bottom: 0;
+        right: 0;
+
+        
+        background-size: map.get($animated-gradient, background-size);
+        position: map.get($animated-gradient, position);
+        animation: slide 3s ease-in-out infinite alternate;
+
+    }
+
+    &.closed:hover {
+
+        #barTop {
+            transform: rotate(-33deg);
+        }
+        
+        #barBottom {
+            transform: rotate(33deg);
+        }
+        
+        #barMiddle, #cross1, #cross2 {
+            opacity: 0;
+        }
+
+    }
+    
+    &.open {
+
+        * {
+            stroke: black;
+        }
+
+        #cross1 {
+            transform: rotate(45deg);
+        }
+
+        #cross2 {
+            transform: rotate(-45deg);
+        }
+
+        #barMiddle, #barTop, #barBottom{
+            opacity: 0;
+        
+        }
+
+        &:hover {
+
+            #cross1 {
+                transform: rotate(33deg);
+                transform-origin: 105% 5%;
+            }
+    
+            #cross2 {
+                transform: rotate(-33deg);
+                transform-origin: 70% 75%;
+            }
+    
+        }
+        
+    }
+
+    .sidebar-button {
+        
+        position: relative;
+        display: flex;
+        height: 40%;
+        width: 40%;
+        overflow: visible;
+        background: transparent;
+        mask: map.get($animated-gradient, background-image);
+
+        * {
+            stroke: black;
+            transition: transform 300ms, opacity 300ms, transform-origin 300ms;
+        }
+
+        #barTop {
+            transform-origin: 50% 35%;
+        }
+
+        #barBottom {
+            transform-origin: 50% 65%;
+        }
+
+        #cross1,
+        #cross2 {
+            transform-origin: 50% 50%;
+        }
+
+        /*
+            #cross2
+            #cross1
+            #barBottom
+            #barMiddle
+            #barTop
+            */
+
+    }
+}

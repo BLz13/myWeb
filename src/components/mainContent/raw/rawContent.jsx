@@ -1,24 +1,21 @@
-import './mainContent.scss';
+import { TEXT } from '../../../utils/data.js';
+import { useUIState } from '../../../hooks/context/useUIState';
 
-import RawContent from './raw/rawContent.jsx';
-import { TEXT } from '../../utils/data.js';
-import { useUIState } from '../../hooks/context/useUIState';
+export default function RawContent() {
 
-export default function MainContent() {
-  const { lang, magic } = useUIState();
+  const { lang } = useUIState();
 
   const data = TEXT?.personal?.[lang] ?? TEXT?.personal?.es ?? null;
+  
   const contact = TEXT?.contact?.[lang] ?? TEXT?.contact?.es ?? null;
 
   if (!data || !contact) {
     return null;
   }
 
-  return ( !magic ? (
-    <RawContent />
-  ) : (
-    <main className='cvData'>
-        <h1 className='title'>{(data.name.value) + ' — ' + (data.title.value)}</h1>
+  return (
+    <main className='rawContent'>
+        <h1>{(data.name.value) + ' — ' + (data.title.value)}</h1>
         <p>{data.intro.value}</p>
 
         <section>
@@ -89,6 +86,6 @@ export default function MainContent() {
         </section>
         
     </main>
-  ));
+  )
 
 }

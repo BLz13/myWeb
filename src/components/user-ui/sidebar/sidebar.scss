@@ -1,0 +1,143 @@
+@use '../../../styles/colors.scss' as *;
+@use '../../../styles/fonts.scss' as *;
+
+$width: 30vw;
+$height: 100dvh;
+$margin: 15px;
+
+.sidebar-container {
+
+    position: fixed;
+    right: 2vw;
+    top: 0;
+    box-sizing: border-box;
+    width: $width;
+    height: calc($height - $margin * 2);
+    margin:  $margin 0;
+    border-radius: 20px;
+    list-style: none;
+    overflow: hidden;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0;
+
+    &::before,
+    &::after {
+        content: "";
+        display: inline-block;
+        height: auto;
+        width: 100%;
+        background-color: white;
+        flex-grow: 0;
+    }
+
+    &::before {
+        height: 5dvh;
+    }
+
+    &::after {
+        flex-grow: 10;
+    }
+
+    .sidebar-section {
+        height: 75px;
+        overflow: hidden;
+        flex-grow: 0;
+        transition: height 300ms;
+        
+        &:nth-child(1) {}
+        
+        &:nth-child(2) {}
+
+        
+        &:not(.expanded):nth-child(3) *:not(.svg-text),
+        &:not(.expanded):nth-child(4) *:not(.svg-text){
+            pointer-events: none;
+            opacity: 0;
+        }
+        
+        &:nth-child(3) {
+            position: relative;
+            
+            > a {
+                height: 50%;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+            }
+        }
+        
+        &:nth-child(4) {
+            position: relative;
+            
+            > ul {
+                position: absolute;
+                bottom: 0;
+                height: 60%;
+                display: grid;
+                grid-template-columns: repeat(4, auto);
+                list-style: none;
+                gap: 10%;
+            }
+        }
+
+        .svg-text {
+
+            * {
+                pointer-events: none;
+            }
+    
+            mask text {
+                font-family: $font-sans;
+                font-weight: 900;
+                text-transform: uppercase;
+                font-size: 30px;
+                letter-spacing: -2px;
+                transition: all 300ms;
+            }
+    
+            .chevron {
+                font-family: $font-mono;
+                font-weight: 900;
+                text-transform: lowercase;
+                transform: scaleY(0.7) translateY(5px);
+                font-size: 20px;
+                transition: all 300ms;
+                transform-origin: 92.5% 20%;
+            }
+    
+        }
+
+        .icon {
+            fill: none;
+            stroke: black;
+            width: auto;
+            height: 7vh;
+        }
+
+        &.expanded {
+
+            height: 220px;
+
+            * {
+                opacity: 1;
+            }
+
+            .chevron {
+                transform: scaleY(0.7) translateY(100px) rotate(180deg);
+            }
+
+            &:hover .chevron {
+                transform: scaleY(0.7) translateY(95px) rotate(180deg);
+            }
+        }
+
+        &:not(.expanded):hover .chevron {
+            transform: scaleY(0.7) translateY(10px);
+        }
+
+        
+
+    }    
+    
+}

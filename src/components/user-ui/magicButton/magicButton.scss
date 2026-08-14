@@ -1,0 +1,147 @@
+@use '../../../styles/colors.scss' as *;
+@use '../../../styles/fonts.scss' as *;
+
+$width: 310px;
+$height: 100px;
+
+.magicButton {
+
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: content-box;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    padding: 3px;
+    border: 1px solid #000;
+    text-decoration: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 0 50px 50px 0;
+    transition: all 500ms;
+    transform-origin: 50% 50%;
+    overflow: hidden;
+    cursor: pointer;
+    height: $height;
+    width: $width;
+    background-image: -moz-linear-gradient(center bottom, rgb(207, 207, 207) 16%, rgb(252, 252, 252) 79%);
+    background-image: linear-gradient(to top, rgb(207, 207, 207) 16%, rgb(252, 252, 252) 79%); 
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.16, rgb(207, 207, 207)), color-stop(0.79, rgb(252, 252, 252)));
+    
+    .buttonText {
+        text-transform: capitalize;
+        color: black;
+        font-family: 'Times New Roman', Times, serif;
+        transform-origin: 50% 100%;
+        transition: all 500ms;
+        opacity: 0;
+        font-size: 3rem;
+
+        &.show {
+            opacity: 1;
+        }
+    }
+
+    &.hide {
+        opacity: 0;
+        transform: translateX(500px);
+    }
+
+    &.show {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    &:hover {
+        transform: scale(1.1);
+
+        .buttonText {
+            color: black;
+            font-size: 3rem;
+        }
+    }
+
+    &.magic-1, &.magic-2, &.magic-3, &.magic-4 {
+        cursor: not-allowed;
+        pointer-events: none;
+
+        &~ .rawContent {
+            height: 99.99dvh;
+        }
+    }
+
+    &.magic-3, &.magic-4 {
+        width: 100vw;
+        height: 100dvh;
+        border: none;
+        margin: 0;
+        padding: 0;
+        bottom: 0;
+        right: 0;
+        background-image: none;
+        background-color: white;
+        mask-repeat: no-repeat;
+        mask-image: radial-gradient(white 90%, white 90%), radial-gradient(black 60%, transparent 60%);
+        mask-composite: subtract;
+        -webkit-mask-composite: subtract;
+        mask-size: 100% 100%, 200vw 200vw;
+
+        ~ .animated-background {
+            opacity: 1;
+        }
+    }
+
+    &.magic-1 {
+        width: $height;
+        margin: -5px;
+
+        .white-bg {
+            opacity: 1;
+        }
+    }
+
+    &.magic-2 {
+        width: 10px;
+        height: 10px;
+        border-width: 1px 0 0 1px;
+        margin: -5px;
+        background-image: none;
+        background-color: white;
+    }
+    
+    &.magic-3 {
+        transition: mask-position 0s, mask-size 0s, all 500ms;
+        border: 1px solid #0000;
+        border-radius: 100px 0 0 0;
+        border-radius: 0;
+        mask-position: 0%, -50% -30%;
+    }
+    
+    &.magic-4 {
+        mask-position: 0%, 50% 50%;
+    }
+
+    .white-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index:-1;
+        width: 100%;
+        max-width: 99.99vw;
+        height: 100%;
+        overflow: hidden;
+        opacity: 0;
+        transition: opacity 500ms;
+        background-color: white;
+    }
+
+    ~ .animated-background {
+        transition: opacity 0ms;
+        transition-delay: 500ms;
+        opacity: 0;
+    }
+
+}

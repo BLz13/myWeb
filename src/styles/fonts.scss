@@ -1,8 +1,12 @@
-/* Fonts */
+/* FONTS */
 
-$font-serif: "Taviraj", serif;
-$font-sans: "DM Sans", sans-serif;
-$font-extra: "Dosis", sans-serif;
+
+$font-sans: "MuseoModerno", sans-serif;
+$font-backup: "Montserrat", sans-serif;
+$font-mono: "Fira Code", monospace;
+$font-serif: "Source Serif 4", serif;
+$font-cursive1: "Meow Script", cursive;
+$font-cursive2: "Playwrite AT", cursive;
 
 h1 {
     font-family: $font-serif;
