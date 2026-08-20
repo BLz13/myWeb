@@ -1,9 +1,13 @@
 @use '../../../styles/colors.scss' as *;
 @use '../../../styles/fonts.scss' as *;
 
+@use "sass:map";
+
 $width: 30vw;
 $height: 100dvh;
 $margin: 15px;
+
+$section-height: 80px;
 
 .sidebar-container {
 
@@ -17,71 +21,88 @@ $margin: 15px;
     border-radius: 20px;
     list-style: none;
     overflow: hidden;
-    display: flex;
-    flex-flow: column nowrap;
+    display: grid;
+    grid-template-rows: 5dvh repeat(6, $section-height) auto repeat(2, 60px);
+    grid-template-columns: repeat(6, 1fr);
     gap: 0;
+    transition: all 300ms ease-out;
+    animation: showText 300ms ease-out;
+
+    &.hide {
+        animation: hideText 300ms forwards;
+    }
+
+    &.closed {
+        transform: translateX(50vw);
+        opacity: 0;
+    }
+
+    &.open {
+        transform: translateX(0vw);
+        opacity: 1;
+    }
+    
 
     &::before,
     &::after {
         content: "";
-        display: inline-block;
-        height: auto;
-        width: 100%;
         background-color: white;
-        flex-grow: 0;
-    }
-
-    &::before {
-        height: 5dvh;
+        grid-column: span 6;
     }
 
     &::after {
-        flex-grow: 10;
+        height: 100%;
+        grid-row: 8;
     }
 
     .sidebar-section {
-        height: 75px;
         overflow: hidden;
-        flex-grow: 0;
-        transition: height 300ms;
+        height: 110%;
+        width: 110%;
+        margin: -1%;
+        grid-column: span 6;
+        gap: 0;
+        display: grid;
         
-        &:nth-child(1) {}
-        
-        &:nth-child(2) {}
+        &:nth-child(-n + 5) {
+            grid-template-columns: repeat(6, 1fr);
 
-        
-        &:not(.expanded):nth-child(3) *:not(.svg-text),
-        &:not(.expanded):nth-child(4) *:not(.svg-text){
-            pointer-events: none;
-            opacity: 0;
-        }
-        
-        &:nth-child(3) {
-            position: relative;
-            
-            > a {
-                height: 50%;
-                position: absolute;
-                bottom: 0;
-                left: 0;
+            &::after {
+                content: "";
+                height: 110%;
+                width: 110%;
+                display: block;
+                background-color: white;
+                margin: -1%;
             }
         }
+
         
-        &:nth-child(4) {
+        &:nth-child(n + 6) {
+            > a {
+                transform-origin: 50%;
+            }
+        }
+
+        > a {
+            display: flex;
+            height: 100%;
+            overflow: hidden;
             position: relative;
-            
-            > ul {
-                position: absolute;
-                bottom: 0;
-                height: 60%;
-                display: grid;
-                grid-template-columns: repeat(4, auto);
-                list-style: none;
-                gap: 10%;
+            transition: transform 300ms ease-in-out;
+            transform-origin: 0% 50%;
+
+            > svg {
+                width: $width;
+            }
+
+            &:hover {
+                transform: scale(1.1);
             }
         }
 
         .svg-text {
+            cursor: pointer;
 
             * {
                 pointer-events: none;
@@ -94,50 +115,144 @@ $margin: 15px;
                 font-size: 30px;
                 letter-spacing: -2px;
                 transition: all 300ms;
-            }
-    
-            .chevron {
-                font-family: $font-mono;
-                font-weight: 900;
-                text-transform: lowercase;
-                transform: scaleY(0.7) translateY(5px);
-                font-size: 20px;
-                transition: all 300ms;
-                transform-origin: 92.5% 20%;
+                transform: scale(2);
+                transform-origin: 0% 50%;
             }
     
         }
 
-        .icon {
-            fill: none;
-            stroke: black;
-            width: auto;
-            height: 7vh;
+        .icon path:nth-child(2) {
+            fill: black;
+        }
+        
+        &:nth-child(1) {
+
+            > a { grid-column: 1 / 4 ; }
+            
+            &::after { grid-column: 4 / 7 ; }
+
+        }
+        
+        &:nth-child(2) {
+
+            > a { grid-column: 1 / 6 ; }
+            
+            &::after { grid-column: 6 / 7 ; }
+            
+        }  
+
+        &:nth-child(3) {
+
+            > a { grid-column: 1 / 6 ; }
+            
+            &::after { grid-column: 6 / 7 ; }
+            
+        } 
+
+        &:nth-child(4) {
+
+            grid-row: 6;
+
+            > a { grid-column: 1 / 5 ; }
+            
+            &::after { grid-column: 5 / 7 ; }
+            
+        }
+        
+        &:nth-child(5) {
+            grid-row: 5;
+
+            > a { grid-column: 1 / 5 ; }
+            
+            &::after { grid-column: 5 / 7 ; }
         }
 
-        &.expanded {
-
-            height: 220px;
-
-            * {
-                opacity: 1;
-            }
-
-            .chevron {
-                transform: scaleY(0.7) translateY(100px) rotate(180deg);
-            }
-
-            &:hover .chevron {
-                transform: scaleY(0.7) translateY(95px) rotate(180deg);
-            }
+        &:nth-child(6),
+        &:nth-child(7),
+        &:nth-child(8),
+        &:nth-child(9) {
+            grid-column: span 1;
+            margin: -1px;
         }
 
-        &:not(.expanded):hover .chevron {
-            transform: scaleY(0.7) translateY(10px);
+        &:nth-child(9) {
+            grid-column: span 3;
+            grid-template-columns: 1fr 1fr 1fr;
+
+            &::after {
+                content: "";
+                height: 110%;
+                display: block;
+                background-color: white;
+                grid-column: span 2;
+            
+            }
         }
 
         
+        &:nth-child(10),
+        &:nth-child(11) {
+            height: 100%;
+            width: 100%;
+            margin: 0%;
+            
+            mask text {
+                font-weight: 600;
+                text-transform: capitalize;
+                font-size: 15px;
+                letter-spacing: 0px;
+                transition: all 300ms;
+                transform: scale(1);
+                transform-origin: 0% 50%;
+            }
+
+        }
+        
+        &:nth-child(10) {
+
+            &:hover > a {
+                transform: scale(1);
+
+                mask text {
+                    font-weight: 900;
+                }
+            }
+
+            mask text {
+                transform: scale(1.5);
+                transform-origin: 13% 50%;
+            }
+
+        }
+        
+        &:nth-child(11) {
+            pointer-events: none;
+            cursor: auto;
+
+            > svg {
+                width: $width;
+                height: 100%;
+            }
+        }       
 
     }    
     
+}
+
+@keyframes hideText {
+    from {
+        background-color: transparent;
+    }
+    to {
+        background-color: white;
+    }
+}
+
+@keyframes showText {
+    from {
+        background-color: white;
+    }
+    to {
+        background-color: transparent;
+    }
 }

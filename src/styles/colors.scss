@@ -8,6 +8,7 @@ $white: #FFFFFF;
 
 $black: #000000;
 
+
 //BLUE
 
 $lightBlue-50:  #D1DEF0;
@@ -32,6 +33,7 @@ $darkBlue-700: #001F52;
 $darkBlue-800: #00173D;
 $darkBlue-900: #001029;
 
+
 // PURPLE
 
 $purple-50:  #907AD6;
@@ -44,6 +46,7 @@ $purple-600: #5035AC;
 $purple-700: #49309C;
 $purple-800: #422B8C;
 $purple-900: #3B267D;
+
 
 //  PINK
 
@@ -72,7 +75,7 @@ $green-700: #187177;
 $green-800: #146166;
 $green-900: #115055;
 
-
+/*
 $animated-gradient: linear-gradient(
     -60deg,
     $lightBlue-900,
@@ -81,6 +84,7 @@ $animated-gradient: linear-gradient(
     $pink-900,
     $green-900
 );
+*/
 
 $gradient-size: 200vw 200vh;
 

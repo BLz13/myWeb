@@ -13,9 +13,14 @@ export const SECTIONS = {
   ]
 };
 
-export const LINKS = [
-  { id: "github", link: "https://github.com/BLz13" }
-];
+export const LINKS = {
+  github: { id: "github", link: "https://github.com/BLz13" },
+  cv: { 
+    en: { id: "cvEN", text:"download my resume from google drive", link: "https://drive.google.com/" },
+    es: { id: "cvES", text:"descarga mi curriculum de google drive", link: "https://drive.google.com/" }
+  }
+};
+
 
 export const TEXT = {
   contact : {

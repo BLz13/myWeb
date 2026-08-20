@@ -16,7 +16,7 @@ export default function SidebarButton() {
         className={`sidebar-button-container ${ sidebarState ? 'open' : 'closed'}`}
         onPointerDown={handleClick}
       >
-        <MenuIcon className={`sidebar-button ${ sidebarState ? 'open' : 'closed'}`} />
+        <MenuIcon className="sidebar-button" />
       </button>
   );
 }

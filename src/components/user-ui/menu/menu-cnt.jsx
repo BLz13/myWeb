@@ -6,10 +6,12 @@ import { useUIState } from "../../../hooks/context/useUIState";
 
 export default function Menu() {
 
-  const { lang } = useUIState();
+  const { lang, sidebarState } = useUIState();
 
   const [displayLang, setDisplayLang] = useState(lang);
   const [exiting, setExiting] = useState(false);
+
+  const aux = sidebarState ? "hide" : "show";
 
   if (lang !== displayLang && !exiting) {
     setExiting(true);
@@ -22,7 +24,7 @@ export default function Menu() {
   };
 
   return (
-    <nav className={`menu-container`}>
+    <nav className={`menu-container ${aux}`}>
       <ul
         key={displayLang}
         className={`menu ${exiting ? "exiting" : ""}`}

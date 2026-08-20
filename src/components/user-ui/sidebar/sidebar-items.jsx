@@ -1,31 +1,22 @@
 import { LINKS, SECTIONS, TEXT } from "../../../utils/data.js";
 
-import ChevronDown from "../../../assets/svg/chevron-down.svg?react"
+import CloudDownloadIcon from "../../../assets/svg/cloud-download.svg?react";
 import GithubLogo from "../../../assets/svg/github.svg?react";
 import LinkedinLogo from "../../../assets/svg/linkedin.svg?react";
 import MailLogo from "../../../assets/svg/mail.svg?react";
 import PhoneLogo from "../../../assets/svg/phone.svg?react";
 import PinLogo from "../../../assets/svg/pin.svg?react";
 import WhatsappLogo from "../../../assets/svg/whatsapp.svg?react";
-import { useState } from "react";
 
-function TextSVG({ text, maskId, expands, onClick }) {
+function MaskSection({ text, maskId }) {
     return (
-        <svg
-            className="svg-text"
-            viewBox="0 0 250 100"
-            preserveAspectRatio="xMidYMid slice"
-            onClick={onClick}
-        >
+        <svg className="svg-text" preserveAspectRatio="xMidYMid slice">
             <defs>
                 <mask id={maskId} x="0" y="0" width="100%" height="100%">
                     <rect x="0" y="0" width="100%" height="100%" fill="white" />
-                    <text x="10" y="0" textAnchor="start" dominantBaseline="hanging">
+                    <text x="10" y="50%" textAnchor="start" dominantBaseline="middle">
                         {text}
                     </text>
-                    {expands && (
-                        <text dx="236" dy="-2" className="chevron" textAnchor="end" dominantBaseline="hanging">⌄</text>
-                    )}
                 </mask>
             </defs>
             <rect x="0" y="0" width="100%" height="100%" mask={`url(#${maskId})`} fill="white" />
@@ -34,91 +25,131 @@ function TextSVG({ text, maskId, expands, onClick }) {
 }
 
 export default function SidebarItems({ lang }) {
-
+    
     const { contact } = TEXT;
 
-    const [ github ] = LINKS;
+    const { github } = LINKS;
 
-    const [expanded, setExpanded] = useState({ proyectos: false, contacto: false, });
-
-    const handleExpand = (sectionId) => {
-        setExpanded((prev) => ({ ...prev, [sectionId]: !prev[sectionId], }));
-    };
-
-    const sections = SECTIONS[lang].map((item, i) => {
-
-        const maskId = `sidebar-text-mask-${item.id}`;
-
-        const listItems = (() => {
-
-            switch (i) {
-
-                case 0: {
-                    return (
-                        <li key={item.id} className="sidebar-section">
-                            <TextSVG text={item.id} maskId={maskId}/>
-                        </li>
-                    );
-                }
-
-                case 1: {
-                    return (
-                        <li key={item.id} className="sidebar-section">
-                            <TextSVG text={item.id} maskId={maskId}/>
-                        </li>
-                    );
-                }
-
-                case 2: {
-                    return (
-                        <li key={item.id} className={expanded[item.id] ? "sidebar-section expanded" : "sidebar-section"}>
-                            <TextSVG text={item.id} maskId={maskId} expands onClick={() => handleExpand(item.id)}/>
-                            <a href={`${github.link}`}>
-                                <GithubLogo className="icon"/>
-                            </a>
-                        </li>
-                    );
-                }
-
-                case 3: {
-                    return (
-                        <li key={item.id} className={expanded[item.id] ? "sidebar-section expanded" : "sidebar-section"}>
-                            <TextSVG text={item.id} maskId={maskId} expands onClick={() => handleExpand(item.id)}/>
-                            <ul>
-                                <li>
-                                    <a href={`mailto:${contact[lang].email.value}`}>
-                                        <MailLogo className="icon"/>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href={`https://wa.me/+${contact[lang].phone.number}`}>
-                                        <WhatsappLogo className="icon"/>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href={`tel:+${contact[lang].phone.number}`}>
-                                        <PhoneLogo className="icon"/>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href={`${contact[lang].linkedin.value}`}>
-                                        <LinkedinLogo className="icon"/>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    );
-                }
-
-                default: return <></>;
-            }
-            
-        })();
-
-        return listItems;
-
+    const sections = SECTIONS[lang].map((item) => {
+        return (
+            <li key={item.id} className="sidebar-section">
+                <a href={`#${item.id}`}>
+                    <MaskSection text={item.id} maskId={`sidebar-text-mask-${item.id}`}/>
+                </a>
+            </li>
+        )
     });
 
-    return (<>{sections}</>);
+    return (
+        <>
+            {sections}
+
+            <li className={"sidebar-section"}>
+                <a href={`${github.link}`} target="_blank">
+                    <svg className="svg-text" preserveAspectRatio="xMidYMid slice">
+                        <defs>
+                            <mask id="github-mask" x="0" y="0" width="100%" height="100%">
+                                <rect x="0" y="0" width="100%" height="100%" fill="white" />
+                                <text x="10" y="50%" textAnchor="start" dominantBaseline="middle">
+                                    {github.id}
+                                </text>
+                                <GithubLogo x="240" y="1%" height="90%" width="70" className="icon"/>
+                            </mask>
+                        </defs>
+                        <rect x="0" y="0" width="100%" height="100%" mask="url(#github-mask)" fill="white" />
+                    </svg>
+                </a>
+            </li>
+            
+            <li className={"sidebar-section"}>
+                <a href={`mailto:${contact[lang].email.value}`}>
+                    <svg className="svg-text" preserveAspectRatio="xMidYMid slice">
+                        <defs>
+                            <mask id="mail-mask" x="0" y="0" width="100%" height="100%">
+                                <rect x="0" y="0" width="100%" height="100%" fill="white" />
+                                <MailLogo x="15" y="2.5%" height="80%" width="70" className="icon"/>
+                            </mask>
+                        </defs>
+                        <rect x="0" y="0" width="100%" height="100%" mask="url(#mail-mask)" fill="white" />
+                    </svg>
+                </a>
+            </li>
+
+            <li className={"sidebar-section"}>
+                <a href={`https://wa.me/+${contact[lang].phone.number}`} target="_blank">
+                    <svg className="svg-text" preserveAspectRatio="xMidYMid slice">
+                        <defs>
+                            <mask id="whatsapp-mask" x="0" y="0" width="100%" height="100%">
+                                <rect x="0" y="0" width="100%" height="100%" fill="white" />
+                                <WhatsappLogo x="10%" y="2.5%" height="80%" width="70" className="icon"/>
+                            </mask>
+                        </defs>
+                        <rect x="0" y="0" width="100%" height="100%" mask="url(#whatsapp-mask)" fill="white" />
+                    </svg>
+                </a>
+            </li>
+
+            <li className={"sidebar-section"}>
+                <a href={`tel:+${contact[lang].phone.number}`}>
+                    <svg className="svg-text" preserveAspectRatio="xMidYMid slice">
+                        <defs>
+                            <mask id="phone-mask" x="0" y="0" width="100%" height="100%">
+                                <rect x="0" y="0" width="100%" height="100%" fill="white" />
+                                <PhoneLogo x="10%" y="2.5%" height="80%" width="70" className="icon"/>
+                            </mask>
+                        </defs>
+                        <rect x="0" y="0" width="100%" height="100%" mask="url(#phone-mask)" fill="white" />
+                    </svg>
+                </a>
+            </li>
+
+            <li className={"sidebar-section"}>
+                <a href={`${contact[lang].linkedin.value}`} target="_blank">
+                    <svg className="svg-text" preserveAspectRatio="xMidYMid slice">
+                        <defs>
+                            <mask id="linkedin-mask" x="0" y="0" width="100%" height="100%">
+                                <rect x="0" y="0" width="100%" height="100%" fill="white" />
+                                <LinkedinLogo x="10%" y="-10%" height="110%" width="70" className="icon"/>
+                            </mask>
+                        </defs>
+                        <rect x="0" y="0" width="100%" height="100%" mask="url(#linkedin-mask)" fill="white" />
+                    </svg>
+                </a>
+            </li>
+
+            <li className={"sidebar-section"}>
+                <a href={LINKS.cv[lang].link} target="_blank">
+                    <svg className="svg-text" preserveAspectRatio="xMidYMid slice">
+                        <defs>
+                            <mask id="cv-mask" x="0" y="0" width="100%" height="100%">
+                                <rect x="0" y="0" width="100%" height="100%" fill="white" />
+                                <CloudDownloadIcon x="10" y="5%" height="90%" width="70" className="icon"/>
+                                <text x="75" y="50%" textAnchor="start" dominantBaseline="middle">
+                                    {LINKS.cv[lang].text}
+                                </text>
+                            </mask>
+                        </defs>
+                        <rect x="0" y="0" width="100%" height="100%" mask="url(#cv-mask)" fill="white" />
+                    </svg>
+                </a>
+            </li>
+
+            <li className={"sidebar-section"}>
+                <svg className="svg-text" preserveAspectRatio="xMidYMid slice">
+                    <defs>
+                        <mask id="address-mask" x="0" y="0" width="100%" height="100%">
+                            <rect x="0" y="0" width="100%" height="100%" fill="white" />
+                            <PinLogo  x="10" y="0%" height="90%" width="70" className="icon"/>
+                            <text x="75" y="50%" textAnchor="start" dominantBaseline="middle">
+                                {TEXT.contact[lang].address.value}
+                            </text>
+                        </mask>
+                    </defs>
+                    <rect x="0" y="0" width="100%" height="100%" mask="url(#address-mask)" fill="white" />
+                </svg>
+            </li>
+        </>
+
+    );
 
 };

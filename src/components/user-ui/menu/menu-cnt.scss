@@ -2,8 +2,7 @@
 @use '../../../styles/fonts.scss' as *;
 
 $height: 92dvh;
-$widthClose: 7rem;
-$widthOpen: 30vw;
+$width: 75px;
 $fontSize: 6rem;
 
 .user-ui.load .menu-container {
@@ -12,7 +11,15 @@ $fontSize: 6rem;
 
 .menu-container {
 
-    width: $widthClose;
+    &.show {
+        opacity: 1;
+    }
+    
+    &.hide {
+        opacity: 0;
+    }
+
+    width: $width;
     height: $height;
     box-sizing: border-box;
     position: fixed;
@@ -22,9 +29,9 @@ $fontSize: 6rem;
     flex-flow: column nowrap;
     gap: 20px;
     bottom: 0;
-    right: 0;
+    right: calc(2vw + 14px);
     padding: 0 0 20px 0;
-    transition: all 500ms;
+    transition: all 500ms, opacity 200ms;
     background: none;
 
     .menu {
