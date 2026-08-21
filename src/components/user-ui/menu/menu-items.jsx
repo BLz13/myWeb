@@ -3,30 +3,37 @@ import { SECTIONS } from "../../../utils/data.js";
 
 export default function MenuItems({ lang }) {
 
-    const lastItem = SECTIONS[lang].length - 1;
-
     const sections = SECTIONS[lang].map((item, i) => {
 
-        const aux = i === lastItem ? (
-            <></>
-        ) : (
-            <li className="separator">
-                <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg">
-                    <circle r="45" cx="50" cy="50" />
-                </svg>
-            </li>            
-        )
+        switch (i) {
 
-        return (
-            <Fragment key={item.id}>
-                <li>
-                    <a href={`#${item.id}`}>
-                        {item.id}
+            case 1 :
+            case 2 : return (
+                <Fragment key={item}>
+                    <li>
+                        <a href={`#${item}`}>
+                            {item}
+                        </a>
+                    </li>
+                    <li className="separator">
+                        <svg height="100" width="100">
+                            <circle r="45" cx="50" cy="50" />
+                        </svg>
+                    </li>
+                </Fragment>               
+            )
+
+            case 4: return (
+                <li key={item}>
+                    <a href={`#${item}`}>
+                        {item}
                     </a>
                 </li>
-                { aux }
-            </Fragment>
-        )
+            )
+        
+            default: return (<Fragment key={item}></Fragment>);
+
+        }
 
     })
 

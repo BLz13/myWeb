@@ -7,6 +7,7 @@ import MailLogo from "../../../assets/svg/mail.svg?react";
 import PhoneLogo from "../../../assets/svg/phone.svg?react";
 import PinLogo from "../../../assets/svg/pin.svg?react";
 import WhatsappLogo from "../../../assets/svg/whatsapp.svg?react";
+import { Fragment } from "react";
 
 function MaskSection({ text, maskId }) {
     return (
@@ -30,14 +31,24 @@ export default function SidebarItems({ lang }) {
 
     const { github } = LINKS;
 
-    const sections = SECTIONS[lang].map((item) => {
-        return (
-            <li key={item.id} className="sidebar-section">
-                <a href={`#${item.id}`}>
-                    <MaskSection text={item.id} maskId={`sidebar-text-mask-${item.id}`}/>
-                </a>
-            </li>
-        )
+    const sections = SECTIONS[lang].map((item, i) => {
+
+        switch (i) {
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5: return (
+                <li key={item} className="sidebar-section">
+                    <a href={`#${item}`}>
+                        <MaskSection text={item} maskId={`sidebar-text-mask-${item}`}/>
+                    </a>
+                </li>
+            )
+        
+            default: return (<Fragment key={item}></Fragment>);
+        }
+
     });
 
     return (
@@ -53,7 +64,7 @@ export default function SidebarItems({ lang }) {
                                 <text x="10" y="50%" textAnchor="start" dominantBaseline="middle">
                                     {github.id}
                                 </text>
-                                <GithubLogo x="240" y="1%" height="90%" width="70" className="icon"/>
+                                <GithubLogo x="210" y="1%" height="90%" width="70" className="icon"/>
                             </mask>
                         </defs>
                         <rect x="0" y="0" width="100%" height="100%" mask="url(#github-mask)" fill="white" />
