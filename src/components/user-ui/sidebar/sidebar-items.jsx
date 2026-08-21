@@ -67,7 +67,7 @@ export default function SidebarItems({ lang }) {
                         <defs>
                             <mask id="mail-mask" x="0" y="0" width="100%" height="100%">
                                 <rect x="0" y="0" width="100%" height="100%" fill="white" />
-                                <MailLogo x="15" y="2.5%" height="80%" width="70" className="icon"/>
+                                <MailLogo x="10%" y="5%" height="80%" width="70" className="icon"/>
                             </mask>
                         </defs>
                         <rect x="0" y="0" width="100%" height="100%" mask="url(#mail-mask)" fill="white" />

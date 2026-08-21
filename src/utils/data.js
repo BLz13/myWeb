@@ -1,16 +1,20 @@
 export const SECTIONS = {
   es :  [
-    { id: "inicio", link: "/" },
-    { id: "experiencia", link: "/experiencia" },
-    { id: "proyectos", link: "/proyectos" },
-    { id: "contacto", link: "/contacto" }
+    "inicio",
+    "experiencia",
+    "educacion",
+    "habilidades",
+    "proyectos",
+    "contacto"
   ],
-  en : [
-    { id: "home", link: "/" },
-    { id: "experience", link: "/experience" },
-    { id: "projects", link: "/projects" },
-    { id: "contact", link: "/contact" }
-  ]
+  en :  [
+    "start",
+    "experience",
+    "education",
+    "skills",
+    "projects",
+    "contact"
+  ],
 };
 
 export const LINKS = {
