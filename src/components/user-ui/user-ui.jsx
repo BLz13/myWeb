@@ -6,6 +6,7 @@ import MagicButton from './magicButton/magicButton';
 import Menu from './menu/menu-cnt';
 import Sidebar from './sidebar/sidebar';
 import SidebarButton from './sidebar-button/sidebar-btn';
+import SlideTop from './slideTop/slide-top';
 import { useState } from 'react';
 import { useUIState } from '../../hooks/context/useUIState';
 
@@ -36,6 +37,7 @@ export default function UserUI() {
                     <Menu />
                     <Sidebar />
                     <LanguageSwitcher />
+                    <SlideTop />
                 </>
             )}
             <AnimatedBackground />

@@ -31,7 +31,8 @@ export const TEXT = {
     es : {
       address : {
         id: 'dirección',
-        value: 'Mar del Plata, Argentina',
+        city : 'Mar del Plata',
+        country: 'Argentina'
       },
       linkedin : {
         id: 'linkedin',
@@ -50,7 +51,8 @@ export const TEXT = {
     en : {
       address : {
         id: 'address',
-        value: 'Mar del Plata, Argentina',
+        city : 'Mar del Plata',
+        country: 'Argentina'
       },
       linkedin : {
         id: 'linkedin',
@@ -100,7 +102,7 @@ export const TEXT = {
             ]
           },
           {
-            company : 'Publissoft',
+            company : 'publissoft',
             place : 'Quebec, Canadá (Remoto)',
             title : 'frontend developer',
             time : 'august 2024 - august 2026 ',
@@ -227,7 +229,7 @@ export const TEXT = {
             ]
           },
           {
-            company : 'Publissoft',
+            company : 'publissoft',
             place : 'Quebec, Canadá (Remoto)',
             title : 'desarrollador frontend',
             time : 'agosto 2024 - agosto 2026',

@@ -1,61 +1,55 @@
 import './mainContent.scss';
 
+import { Fragment, useState } from 'react';
 import { SECTIONS, TEXT } from '../../utils/data.js';
 
+import ChevronDown from "../../assets/svg/chevron-down.svg?react"
+import Contact from './contact.jsx';
+import Experience from './experience.jsx';
+import MainLogo from "../../assets/svg/logo-slim-light.svg?react"
 import RawContent from './raw/rawContent.jsx';
 import { useUIState } from '../../hooks/context/useUIState';
 
 export default function MainContent() {
 
-  const { lang, magic, sidebarState } = useUIState();
+  const { lang, magic, sidebarState, scrollToSection } = useUIState();
 
   const data = TEXT?.personal?.[lang] ?? TEXT?.personal?.es ?? null;
-  const contact = TEXT?.contact?.[lang] ?? TEXT?.contact?.es ?? null;
-  const stateClass = sidebarState ? "shorten" : "expanded";
 
-  if (!data || !contact) {
-    return null;
-  }
+  const [displayLang, setDisplayLang] = useState(lang);
+  const [hide, setHide] = useState(false);
+  
+  const stateClass = sidebarState ? "shorten" : "expanded";
+  
+  const handleAnimationEnd = (e) => {
+    if (e.animationName !== "hideCV") return;
+    setDisplayLang(lang);
+    setHide(false);
+  };  
 
   const sections = SECTIONS[lang]?.map((item, i) => {
+
+    const ids = SECTIONS.en;
+
     switch (i) {
-      case 0:
-        return (
-          <div key={item} id={item}>
-            <h1 className='title'>{data.name.value + ' — ' + data.title.value}</h1>
+
+      case 0: return (
+          <div key={item} id={ids[i]}>
+            <MainLogo />
+            <h1 className='name'>{data.name.value}</h1>
+            <h2 className='title'>{data.title.value}</h2>
             <p>{data.intro.value}</p>
           </div>
-        );
+      );
 
-      case 1:
-        return (
-          <div key={item} id={item}>
-            <h2><strong>{data.experience.ids[0]}</strong></h2>
-            <ul>
-              {data.experience.value.map((exp, expIndex) => {
-                const key = 'key' + exp?.company + expIndex;
-                return (
-                  <li key={key}>
-                    <h3>{exp?.title}</h3>
-                    <p><strong>{data.experience.ids[1]}</strong>{exp?.company}</p>
-                    <p><strong>{data.experience.ids[2]}</strong>{exp?.place}</p>
-                    <p><strong>{data.experience.ids[3]}</strong>{exp?.time}</p>
-                    <h4>{data.experience.ids[4]}</h4>
-                    <ul>
-                      {exp.tasks.map((task, tIdx) => (
-                        <li key={`task-${key}-${tIdx}`}>{task}</li>
-                      ))}
-                    </ul>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        );
+      case 1: return (
+        <div key={item} id={ids[i]}>
+          <Experience data={data} />
+        </div>
+      );
 
-      case 2:
-        return (
-          <div key={item} id={item}>
+      case 2: return (
+          <div key={item} id={ids[i]}>
             <h2><strong>{data.education.ids[0]}</strong></h2>
             <ul>
               {data.education.value.map((edu, eduIndex) => {
@@ -72,11 +66,10 @@ export default function MainContent() {
               })}
             </ul>
           </div>
-        );
+      );
 
-      case 3:
-        return (
-          <div key={item} id={item}>
+      case 3: return (
+          <div key={item} id={ids[i]}>
             <h2>{data.skills.id}</h2>
             {Object.entries(data.skills.value).map(([group, list]) => (
               <div key={group}>
@@ -87,38 +80,37 @@ export default function MainContent() {
               </div>
             ))}
           </div>
-        );
+      );
 
-      case 4:
-        return <div key={item} id={item}></div>;
+      case 4: return <div key={item} id={ids[i]}></div>;
 
-      case 5:
-        return (
-          <div key={item} id={item}>
-            <h2>{contact.address.id}</h2>
-            <p>{contact.address.value}</p>
-            <p>
-              {contact.linkedin.id}
-              <a href={contact.linkedin.value}>
-                {contact.linkedin.value}
-              </a>
-            </p>
-            <h2>{contact.phone.id}</h2>
-            <p>{contact.phone.value}</p>
-            <h2>{contact.email.id}</h2>
-            <p><a href={`mailto:${contact.email.value}`}>{contact.email.value}</a></p>
+      case 5: return (
+        <Fragment key={item}>
+          <div id={ids[i]}>
+            <Contact lang={lang} />
           </div>
-        );
+          <span
+            onTouchEnd={ () => scrollToSection("experience") }
+            onClick={ () => scrollToSection("experience") }
+            className='slide-down'
+          >
+            <ChevronDown />
+            <ChevronDown />
+            <ChevronDown />
+          </span>
+        </Fragment>
+      );
 
-      default:
-        return null;
+      default: return null;
+
     }
+    
   }) ?? [];
 
   return (!magic ? (
     <RawContent />
   ) : (
-    <main className={`cvData ${stateClass}`}>
+    <main key={displayLang} className={`cvData ${stateClass} ${hide ? "hide" : ""}`} onAnimationEnd={handleAnimationEnd} >
       {sections}
     </main>
   ));

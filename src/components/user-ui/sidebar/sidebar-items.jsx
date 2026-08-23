@@ -1,13 +1,14 @@
 import { LINKS, SECTIONS, TEXT } from "../../../utils/data.js";
 
 import CloudDownloadIcon from "../../../assets/svg/cloud-download.svg?react";
+import { Fragment } from "react";
 import GithubLogo from "../../../assets/svg/github.svg?react";
 import LinkedinLogo from "../../../assets/svg/linkedin.svg?react";
 import MailLogo from "../../../assets/svg/mail.svg?react";
 import PhoneLogo from "../../../assets/svg/phone.svg?react";
 import PinLogo from "../../../assets/svg/pin.svg?react";
 import WhatsappLogo from "../../../assets/svg/whatsapp.svg?react";
-import { Fragment } from "react";
+import { useUIState } from "../../../hooks/context/useUIState.jsx";
 
 function MaskSection({ text, maskId }) {
     return (
@@ -26,12 +27,16 @@ function MaskSection({ text, maskId }) {
 }
 
 export default function SidebarItems({ lang }) {
+
+    const { scrollToSection } = useUIState();
     
     const { contact } = TEXT;
 
     const { github } = LINKS;
 
     const sections = SECTIONS[lang].map((item, i) => {
+        
+        const ids = SECTIONS.en;
 
         switch (i) {
             case 1:
@@ -40,9 +45,12 @@ export default function SidebarItems({ lang }) {
             case 4:
             case 5: return (
                 <li key={item} className="sidebar-section">
-                    <a href={`#${item}`}>
+                    <span
+                        onTouchEnd={ () => scrollToSection(ids[i]) }
+                        onClick={ () => scrollToSection(ids[i]) }
+                    >
                         <MaskSection text={item} maskId={`sidebar-text-mask-${item}`}/>
-                    </a>
+                    </span>
                 </li>
             )
         
@@ -152,7 +160,7 @@ export default function SidebarItems({ lang }) {
                             <rect x="0" y="0" width="100%" height="100%" fill="white" />
                             <PinLogo  x="10" y="0%" height="90%" width="70" className="icon"/>
                             <text x="75" y="50%" textAnchor="start" dominantBaseline="middle">
-                                {TEXT.contact[lang].address.value}
+                                {`${TEXT.contact[lang].address.city}, ${TEXT.contact[lang].address.country}`}
                             </text>
                         </mask>
                     </defs>

@@ -16,6 +16,7 @@ export default function Sidebar() {
   if (lang !== displayLang && !hide) {
     setHide(true);
   }
+  
   const handleAnimationEnd = (e) => {
     if (e.animationName !== "hideText") return;
     setDisplayLang(lang);

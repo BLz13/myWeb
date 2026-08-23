@@ -12,7 +12,7 @@ $section-height: 80px;
 .sidebar-container {
 
     position: fixed;
-    right: 2vw;
+    right: 5vw;
     top: 0;
     box-sizing: border-box;
     width: $width;
@@ -79,11 +79,13 @@ $section-height: 80px;
 
         
         &:nth-child(n + 7) {
+            > span,
             > a {
                 transform-origin: 50%;
             }
         }
 
+        > span,
         > a {
             display: flex;
             height: 100%;
@@ -128,7 +130,7 @@ $section-height: 80px;
         &:nth-child(1),
         &:nth-child(2) {
 
-            > a { grid-column: 1 / 6 ; }
+            > span { grid-column: 1 / 6 ; }
             
             &::after { grid-column: 6 / 7 ; }
 
@@ -136,17 +138,17 @@ $section-height: 80px;
 
         &:nth-child(3) {
 
-            &:has([href="#habilidades"]) {
+            &:has(#sidebar-text-mask-habilidades) {
 
-                > a { grid-column: 1 / 6 ; }
+                > span { grid-column: 1 / 6 ; }
                 
                 &::after { grid-column: 6 / 7 ; }
 
             }
             
-            &:has([href="#skills"]) {
+            &:has(#sidebar-text-mask-skills) {
 
-                > a { grid-column: 1 / 4 ; }
+                > span { grid-column: 1 / 4 ; }
                 
                 &::after { grid-column: 4 / 7 ; }
 
@@ -157,7 +159,7 @@ $section-height: 80px;
         &:nth-child(4),
         &:nth-child(5) {
 
-            > a { grid-column: 1 / 5 ; }
+            > span { grid-column: 1 / 5 ; }
             
             &::after { grid-column: 5 / 7 ; }
             

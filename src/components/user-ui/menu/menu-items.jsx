@@ -1,9 +1,14 @@
 import { Fragment } from "react";
 import { SECTIONS } from "../../../utils/data.js";
+import { useUIState } from "../../../hooks/context/useUIState.jsx";
 
 export default function MenuItems({ lang }) {
 
+    const { scrollToSection } = useUIState();
+
     const sections = SECTIONS[lang].map((item, i) => {
+        
+        const ids = SECTIONS.en;
 
         switch (i) {
 
@@ -11,9 +16,12 @@ export default function MenuItems({ lang }) {
             case 2 : return (
                 <Fragment key={item}>
                     <li>
-                        <a href={`#${item}`}>
+                        <span 
+                         onClick={ () => scrollToSection(ids[i]) }
+                         onTouchEnd={ () => scrollToSection(ids[i]) }
+                        >
                             {item}
-                        </a>
+                        </span>
                     </li>
                     <li className="separator">
                         <svg height="100" width="100">
@@ -25,9 +33,12 @@ export default function MenuItems({ lang }) {
 
             case 4: return (
                 <li key={item}>
-                    <a href={`#${item}`}>
+                    <span 
+                        onClick={ () => scrollToSection(ids[i]) }
+                        onTouchEnd={ () => scrollToSection(ids[i]) }
+                    >
                         {item}
-                    </a>
+                    </span>
                 </li>
             )
         
