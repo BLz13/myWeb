@@ -5,7 +5,7 @@
 
 $width: 30vw;
 $height: 100dvh;
-$margin: 15px;
+$margin: 30px;
 
 $section-height: 80px;
 
@@ -41,12 +41,11 @@ $section-height: 80px;
         transform: translateX(0vw);
         opacity: 1;
     }
-    
 
     &::before,
     &::after {
         content: "";
-        background-color: white;
+        background-color: var(--main);
         grid-column: span 6;
     }
 
@@ -72,7 +71,7 @@ $section-height: 80px;
                 height: 110%;
                 width: 110%;
                 display: block;
-                background-color: white;
+                background-color: var(--main);
                 margin: -1%;
             }
         }
@@ -106,6 +105,10 @@ $section-height: 80px;
         .svg-text {
             cursor: pointer;
 
+            > rect {
+                fill: var(--main);
+            }
+
             * {
                 pointer-events: none;
             }
@@ -128,7 +131,8 @@ $section-height: 80px;
         }
         
         &:nth-child(1),
-        &:nth-child(2) {
+        &:nth-child(2),
+        &:nth-child(3) {
 
             > span { grid-column: 1 / 6 ; }
             
@@ -136,7 +140,7 @@ $section-height: 80px;
 
         }
 
-        &:nth-child(3) {
+        &:nth-child(4) {
 
             &:has(#sidebar-text-mask-habilidades) {
 
@@ -156,7 +160,6 @@ $section-height: 80px;
 
         }
 
-        &:nth-child(4),
         &:nth-child(5) {
 
             > span { grid-column: 1 / 5 ; }
@@ -190,7 +193,7 @@ $section-height: 80px;
                 content: "";
                 height: 110%;
                 display: block;
-                background-color: white;
+                background-color: var(--main);
                 grid-column: span 2;
             
             }
@@ -251,13 +254,13 @@ $section-height: 80px;
         background-color: transparent;
     }
     to {
-        background-color: white;
+        background-color: var(--main);
     }
 }
 
 @keyframes showText {
     from {
-        background-color: white;
+        background-color: var(--main);
     }
     to {
         background-color: transparent;

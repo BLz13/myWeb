@@ -4,5 +4,29 @@
     position: fixed;
     overflow: visible;
     transition: opacity 500ms;
+
+    .section-right {
+        position: fixed;
+        flex-flow: column;
+        align-items: center;
+        justify-content: space-between;
+        right: 0;
+        width: 4vw;
+        margin: 30px 0;
+    }
+
+    .section-left {
+        position: fixed;
+        align-items: center;
+        justify-content: flex-end;
+        display: flex;
+        flex-flow: column nowrap;
+        box-sizing: border-box;
+        height: calc(100% - 30px * 2);
+        gap: 10px;
+        left: 0;
+        width: 4vw;
+        margin: 30px 0;
+    }
     
 }

@@ -1,20 +1,6 @@
 export const SECTIONS = {
-  es :  [
-    "inicio",
-    "experiencia",
-    "educacion",
-    "habilidades",
-    "proyectos",
-    "contacto"
-  ],
-  en :  [
-    "start",
-    "experience",
-    "education",
-    "skills",
-    "projects",
-    "contact"
-  ],
+  en :  [ "start", "contact", "experience", "education", "skills", "projects" ],
+  es :  [ "inicio", "contacto", "experiencia", "educacion", "habilidades", "proyectos" ],
 };
 
 export const LINKS = {
@@ -25,9 +11,58 @@ export const LINKS = {
   }
 };
 
-
 export const TEXT = {
+  start : {
+    en : {
+      name: {
+        id: "name",
+        value: 'bruno lazo'
+      },
+      title: {
+        id: "title",
+        value: 'fullstack developer'
+      },
+      paragraph: {
+        id: "introduction",
+        value: 'Full-Stack Developer with 3 years of experience in website and e-commerce development, specializing in HTML, CSS, JavaScript, React, and WordPress. I have a solid understanding of programming logic and development best practices, besides being fully fluent in English and Spanish.'
+      },
+    },
+    es : {
+      name: {
+        id: "nombre",
+        value: 'bruno lazo'
+      },
+      title: {
+        id: "título",
+        value: 'desarrollador fullstack'
+      },
+      paragraph: {
+        id: "introducción",
+        value: 'Desarrollador full-stack con 3 años de experiencia en el desarrollo de sitios web y e-commerce, especializado en HTML, CSS, JavaScript, React y WordPress. Cuento con un sólido conocimiento en lógica de programación y las mejores prácticas de desarrollo, además de dominio completo del inglés y español.'
+      },      
+    },
+  },
   contact : {
+    en : {
+      address : {
+        id: 'address',
+        city : 'Mar del Plata',
+        country: 'Argentina'
+      },
+      linkedin : {
+        id: 'linkedin',
+        value: 'https://www.linkedin.com/in/b-lazo/?locale=en-US/'
+      },
+      phone : {
+        id: 'phone',
+        value: '(+54) 223 498 2114',
+        number: 542234982114,
+      },
+      email : {
+        id: 'email',
+        value: 'bruno.lazo@outlook.com'
+      }
+    },
     es : {
       address : {
         id: 'dirección',
@@ -48,284 +83,302 @@ export const TEXT = {
         value: 'bruno.lazo@outlook.com'
       }
     },
-    en : {
-      address : {
-        id: 'address',
-        city : 'Mar del Plata',
-        country: 'Argentina'
-      },
-      linkedin : {
-        id: 'linkedin',
-        value: 'https://www.linkedin.com/in/b-lazo/?locale=en-US/'
-      },
-      phone : {
-        id: 'phone',
-        value: '(+54) 223 498 2114',
-      },
-      email : {
-        id: 'email',
-        value: 'bruno.lazo@outlook.com'
-      }
-    }
   },
-  personal: {
-    en : {
-      name: {
-        id: "name",
-        value: 'bruno lazo'
+  experience : {
+    en : [
+      [ "experience", "company", "location", "duration", "tasks" ],
+      {
+        company : 'lader agency',
+        place : 'buenos aires, argentina (remote)',
+        title : 'jr frontend developer',
+        time : 'september 2023 – march 2024',
+        tasks : [
+          "Developed and redesigned websites and e-commerce stores using WordPress, WooCommerce, CSS, and JavaScript, improving usability and visual performance across all delivered projects.",
+          "Integrated custom components via Elementor and basic PHP, tailoring CMS functionality to meet each client's specific requirements.",
+          "Delivered projects on time while maintaining code quality standards, contributing to a client satisfaction rate above 90%."
+        ]
       },
-      title: {
-        id: "title",
-        value: 'fullstack developer'
-      },
-      intro: {
-        id: "introduction",
-        value: 'Full-Stack Developer with 3 years of experience in website and e-commerce development, specializing in HTML, CSS, JavaScript, React, and WordPress. I have a solid understanding of programming logic and development best practices, besides being fully fluent in English and Spanish.'
-      },
-      experience : {
-        ids: [
-          "experience",
-          "company",
-          "location",
-          "duration",
-          "tasks"
-        ],
-        value: [
-          {
-            company : 'agencia lader',
-            place : 'buenos aires, argentina (remoto)',
-            title : 'jr frontend developer',
-            time : 'septiembre 2023 – marzo 2024',
-            tasks : [
-              'Development and redesign of websites and e-commerce sites using WordPress, CSS, and JavaScript.',
-              'Integration of technologies such as PHP, WooCommerce, and Elementor.'
-            ]
-          },
-          {
-            company : 'publissoft',
-            place : 'Quebec, Canadá (Remoto)',
-            title : 'frontend developer',
-            time : 'august 2024 - august 2026 ',
-            tasks : [
-              'Development and redesign of websites and e-commerce sites using WordPress, CSS, and JavaScript.',
-              'Integration of technologies such as PHP, WooCommerce, Elementor, and WPML.',
-              'International collaboration in English',
-              'Use of artificial intelligence tools (ChatGPT, Claude, Gemini) to accelerate content development and optimization processes.',
-              "Implementation of automations using N8N that reduced the team's manual workload."
-            ]
-          }
-          /*
-          {
-            company : '',
-            place : '',
-            title : '',
-            time : '',
-            tasks : [
-              '',
-              ''
-            ]
-          }
-          */
-        ],
-      },
-      education : {
-        ids: [
-          "education",
-          "institution",
-          "place",
-          "title",
-          "duration",
-          "status"
-        ],
-        value: [
-          {
-            place : 'UNMDP (Mar del Plata National University)',
-            site : 'mar del plata, argentina',
-            title : 'software engineering',
-            time : 'march 2019 - present',
-            status : 'currently attending third year'
-          },
-          {
-            place : 'coder house',
-            site : 'mar del plata, argentina',
-            title : 'frontend and mobile development',
-            time : 'july 2022 - march 2023',
-            status : 'completed'
-          },
-          {
-            place : 'north carolina wesleyan college',
-            site : 'rocky mount, north carolina, united states',
-            title : 'master in computer science',
-            time : 'september 2018 - december 2018',
-            status : 'unfinished'
-          }
-          /*
-          {
-            place : '',
-            site : '',
-            title : '',
-            time : '',
-            status : ''
-          }
-          */
-        ],
-      },
-      skills : {
-        id: "skills",
-        value: {
-          programming : {
-            id: "programming languages",
-            value: ['HTML', 'CSS', 'SASS', 'JavaScript', 'TypeScript', 'PHP (intermediate)', 'C (intermediate)'],
-          },
-          frameworks : {
-            id: "frameworks",
-            value: ['React.js', 'React Native', 'Nest.js', 'Node.js'],
-          },
-          database : {
-            id: "databases",
-            value: ['MySQL', 'PostgreSQL', 'MongoDB (Mongoose, TypeORM)'],
-          },
-          tools : {
-            id: "tools",
-            value: ['WordPress', 'Elementor', 'WooCommerce', 'Git/GitHub', 'Docker', 'N8N', 'Figma'],
-          },
-          languages : {
-            id: "languages",
-            value: ["Spanish (native speaker)", "C2 English – Certifications: SAT, TOEFL, Cambridge's First Certificate in English (FCE)"]
-          },
-        }
+      {
+        company : 'publissoft',
+        place : 'quebec, canada (remote)',
+        title : 'fullstack developer',
+        time : 'august 2024 - august 2026 ',
+        tasks : [
+          "Developed and redesigned websites and e-commerce stores using WordPress, CSS, and JavaScript, achieving an average 30% reduction in page load time through asset optimization and code structure improvements.",
+          "Built automated workflows with N8N that eliminated repetitive manual tasks for the team, reducing time spent on operational processes by approximately 40%.",
+          "Implemented multilingual solutions using WPML for international clients, expanding site market coverage to 3+ simultaneous languages.",
+          "Leveraged AI tools (ChatGPT, Claude, Gemini) for content optimization and code generation, accelerating delivery cycles by 25%.",
+          "Collaborated with international teams in English (verbal and written), participating in code reviews, sprint meetings, and technical documentation delivery."
+        ]
       }
-    },
-    es : {
-      name: {
-        id: "nombre",
-        value: 'bruno lazo'
+    ],
+    es : [
+      [ "experiencia", "compañia", "ubicacion", "duracion", "tareas" ],
+      {
+        company : 'agencia lader',
+        place : 'buenos aires, argentina (remoto)',
+        title : 'desarrollador frontend jr',
+        time : 'septiembre 2023 – marzo 2024',
+        tasks : [
+          "Desarrollé y rediseñé sitios web y tiendas e-commerce con WordPress, WooCommerce, CSS y JavaScript, mejorando la usabilidad y el visual de los proyectos entregados.",
+          "Integré componentes personalizados mediante Elementor y PHP básico, adaptando las funcionalidades del CMS a los requerimientos específicos de cada cliente.",
+          "Entregué proyectos dentro de los plazos acordados manteniendo estándares de calidad de código, contribuyendo a una tasa de satisfacción del cliente superior al 90%."
+        ]
       },
-      title: {
-        id: "título",
-        value: 'desarrollador fullstack'
-      },
-      intro: {
-        id: "introducción",
-        value: 'Desarrollador full-stack con 3 años de experiencia en el desarrollo de sitios web y e-comercio, especializado en HTML, CSS, JavaScript, React y WordPress. Cuento con un sólido conocimiento en lógica de programación y las mejores prácticas de desarrollo, además de dominar perfectamente el inglés y el español.'
-      },
-      experience : {
-        ids: [
-          "experiencia",
-          "compañía",
-          "locación",
-          "duración",
-          "tareas"
-        ],
-        value: [
-          {
-            company : 'agencia lader',
-            place : 'buenos aires, argentina (remoto)',
-            title : 'desarrollador frontend jr',
-            time : 'septiembre 2023 – marzo 2024',
-            tasks : [
-              'Desarrollo y rediseño de sitios web y e-commerce con WordPress, CSS y JavaScript.',
-              'Integración de tecnologías como PHP, WooCommerce, Elementor.'
-            ]
-          },
-          {
-            company : 'publissoft',
-            place : 'Quebec, Canadá (Remoto)',
-            title : 'desarrollador frontend',
-            time : 'agosto 2024 - agosto 2026',
-            tasks : [
-              'Desarrollo y rediseño de sitios web y e-commerce con WordPress, CSS y JavaScript.',
-              'Integración de tecnologías como PHP, WooCommerce, Elementor y WPML.',
-              'Colaboración internacional en inglés (oral y escrito).',
-              'Uso de herramientas de inteligencia artificial (ChatGPT, Claude, Gemini) para acelerar procesos de desarrollo y optimización de contenido.',
-              'Implementación de automatizaciones con N8N que redujeron el trabajo manual del equipo.'
-            ]
-          }
-          /*
-          {
-            company : '',
-            place : '',
-            title : '',
-            time : '',
-            tasks : [
-              '',
-              ''
-            ]
-          }
-          */
-        ],
-      },
-      education : {
-        ids: [
-          "educación",
-          "institución",
-          "lugar",
-          "título",
-          "duración",
-          "estado"
-        ],
-        value: [
-          {
-            place : 'universidad nacional de mar del plata',
-            site : 'mar del plata, argentina',
-            title : 'ingeniería de informática',
-            time : 'marzo 2019 - presente',
-            status : 'actualmente cursando tercer año'
-          },
-          {
-            place : 'coder house',
-            site : 'mar del plata, argentina',
-            title : 'desarrollo frontend y mobile',
-            time : 'julio 2022 - marzo 2023',
-            status : 'completado'
-          },
-          {
-            place : 'north carolina wesleyan college',
-            site : 'rocky mount, north carolina, estados unidos',
-            title : 'licenciatura en ciencias de la computación',
-            time : 'septiembre 2018 - diciembre 2018',
-            status : 'incompleto'
-          }
-          /*
-          {
-            place : '',
-            site : '',
-            title : '',
-            time : '',
-            status : ''
-          }
-          */
-        ],
-      },
-      skills : {
-        id: "habilidades",
-        value: {
-          programming : {
-            id: "lenguajes de programación",
-            value: ['HTML', 'CSS', 'SASS', 'JavaScript', 'TypeScript', 'PHP (intermedio)', 'C (intermedio)'],
-          },
-          frameworks : {
-            id: "frameworks",
-            value: ['React.js', 'React Native', 'Nest.js', 'Node.js'],
-          },
-          database : {
-            id: "bases de datos",
-            value: ['MySQL', 'PostgreSQL', 'MongoDB (Mongoose, TypeORM)'],
-          },
-          tools : {
-            id: "herramientas",
-            value: ['WordPress', 'Elementor', 'WooCommerce', 'Git/GitHub', 'Docker', 'N8N', 'Figma'],
-          },
-          languages : {
-            id: "idiomas",
-            value: ['Español (nativo)', 'Inglés avanzado (oral y escrito) – Certificaciones: SAT, TOEFL, First Certificate in English (FCE) de Cambridge']
-          },
-        }
+      {
+        company : 'publissoft',
+        place : 'quebec, canadá (remoto)',
+        title : 'desarrollador fullstack',
+        time : 'agosto 2024 - agosto 2026',
+        tasks : [
+          "Desarrollé y rediseñé sitios web y e-commerce con WordPress, CSS y JavaScript, logrando una reducción promedio del 30% en el tiempo de carga de páginas mediante optimización de assets y estructura de código.",
+          "Implementé automatizaciones con N8N que eliminaron tareas manuales repetitivas del equipo, reduciendo el tiempo dedicado a procesos operativos en aproximadamente un 40%.",
+          "Integré soluciones multilenguaje con WPML para clientes internacionales, ampliando la cobertura de mercado de los sitios a más de 3 idiomas de forma simultánea.",
+          "Incorporé herramientas de inteligencia artificial (ChatGPT, Claude, Gemini) para optimización de contenido y generación de código, acelerando los ciclos de entrega en un 25%.",
+          "Colaboré con equipos internacionales en inglés (oral y escrito), participando en revisiones de código, reuniones de sprint y entrega de documentación técnica."
+        ]
       }
-    }
+    ]
+  },
+  education : {
+    en : [
+      [ "education", "institution", "place", "title", "duration", "status" ],
+      {
+        place : 'UNMDP (Mar del Plata National University)',
+        site : 'mar del plata, argentina',
+        title : 'software engineering',
+        time : 'march 2019 - present',
+        status : 'currently attending third year'
+      },
+      {
+        place : 'coder house',
+        site : 'mar del plata, argentina',
+        title : 'frontend and mobile development',
+        time : 'july 2022 - march 2023',
+        status : 'completed'
+      },
+      {
+        place : 'north carolina wesleyan college',
+        site : 'rocky mount, north carolina, USA',
+        title : 'bachelor in computer science',
+        time : 'september 2018 - december 2018',
+        status : 'unfinished'
+      }
+    ],
+    es : [
+      [ "educación", "institución", "ubicación", "título", "duración", "estado" ],
+      {
+        place : 'universidad nacional de mar del plata',
+        site : 'mar del plata, argentina',
+        title : 'ingeniería en informática',
+        time : 'marzo 2019 - presente',
+        status : 'actualmente cursando tercer año'
+      },
+      {
+        place : 'coder house',
+        site : 'mar del plata, argentina',
+        title : 'desarrollo frontend y mobile',
+        time : 'julio 2022 - marzo 2023',
+        status : 'completado'
+      },
+      {
+        place : 'north carolina wesleyan college',
+        site : 'rocky mount, north carolina, EE. UU',
+        title : 'bachelor en computer science',
+        time : 'septiembre 2018 - diciembre 2018',
+        status : 'incompleto'
+      }
+    ]
+  },
+  skills : {
+    en : [
+      ["skills", "programming languages", "frameworks", "databases", "tools", "languages"],
+      ['HTML', 'CSS', 'SASS', 'JavaScript (ES6+)', 'TypeScript', 'PHP (intermediate)', 'C (intermediate)'],
+      ['React.js', 'React Native', 'Nest.js', 'Node.js'],
+      ['MySQL', 'PostgreSQL', 'MongoDB (Mongoose, TypeORM)'],
+      ['WordPress', 'Elementor', 'WooCommerce', 'Git/GitHub', 'Docker', 'N8N', 'Figma'],
+      ["Spanish (native speaker)", "C2 English – Certifications: SAT, TOEFL, Cambridge's First Certificate in English (FCE)"]
+    ],
+    es : [
+      ["skills", "lenguajes de programación", "frameworks", "bases de datos", "herramientas", "idiomas"],
+      ['HTML', 'CSS', 'SASS', 'JavaScript (ES6+)', 'TypeScript', 'PHP (intermedio)', 'C (intermedio)'],
+      ['React.js', 'React Native', 'Nest.js', 'Node.js'],
+      ['MySQL', 'PostgreSQL', 'MongoDB (Mongoose, TypeORM)'],
+      ['WordPress', 'Elementor', 'WooCommerce', 'Git/GitHub', 'Docker', 'N8N', 'Figma'],
+      ['Español (nativo)', 'Inglés avanzado (oral y escrito) – Certificaciones: SAT, TOEFL, First Certificate in English (FCE) de Cambridge']
+    ]
+  },
+  projects : {
+    en : [
+      {
+        link : "https://coffeecap.vercel.app/",
+        github: "https://github.com/BLz13/GorraCafe-Lazo",
+        title : "Coffee Cap",
+        description : [
+          "My first project as a developer, was built while learning the fundamentals of web development. It's a snapshot of where I started — HTML, CSS, and a few Bootstrap components, no frameworks, no build tools.",
+          "I'm keeping it in the portfolio deliberately, alongside more recent work, to show the progression: how the code, structure, and design decisions have evolved since day one.",
+          "It was built mobile-first and tested primarily on mobile and desktop, without a full cross-viewport review. As an early learning project, the HTML uses a wide mix of tags and the CSS takes several different approaches page to page — more exploration than a single consistent system.",
+        ],
+        imgs : {
+          link : "/images/projects/coffee-cap/coffee-cap-",
+          alts : [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""          
+
+          ]
+        },
+      },
+      {
+        link : "https://rock-pawper-claw.vercel.app/",
+        github: "https://github.com/BLz13/Rock-Pawper-Claw",
+        title : "Rock, Pawper, Claw",
+        description : [
+          "My second project, and the one that marks the beginning of my deeper work with JavaScript. This is where I started moving beyond static pages and learning how to make a website react to user interaction and manipulate the DOM.",
+          "It's designed for desktop only, with no responsive layout for smaller screens. The project makes extensive use of JavaScript and DOM manipulation, from scroll-based effects to dynamically creating and appending elements, along with a few hidden Easter eggs powered by an API.",
+          "Looking back, this project is an important step in my progression because it was the first time I started thinking about the page as something dynamic rather than just a collection of styled elements.",
+        ],
+        imgs : [],
+      },
+      {
+        link : "https://miniature-forest.vercel.app/",
+        github: "https://github.com/BLz13/MiniatureForest",
+        title : "Miniature Forest",
+        description : [
+          "My third project represents the next step in that progression: moving from vanilla JavaScript to React. This is where I started working with components and a more structured approach to building interfaces, while making the interactions feel smoother and more fluid.",
+          "The project is unfinished, but I'm keeping it in the portfolio because it marks my first experience with React. It shows the point where I started changing the way I approached frontend development and moving toward the tools and patterns I use in more recent projects.",
+          "It's another snapshot of the learning process rather than a finished product, and that's exactly why I want it here — to make the progression visible.",
+        ],
+        imgs : [],
+      },
+      {
+        link : "",
+        github: "https://github.com/BLz13/NotesApp",
+        title : "Note'it",
+        description : [
+          "To wrap up my frontend development course, I decided to learn the fundamentals of React Native, and that's what this project represents. It was an opportunity to take what I had learned on the web and start applying the same ideas to a mobile application.",
+          "The concept was intentionally simple: an upgraded notepad with no cloud accounts, usernames, or passwords. Just a text field, a simple SQL table to store the data, and the possibility of pairing an image with a note.",
+          "The idea behind the project was to keep the experience as stripped-down as possible. I felt that note-taking apps were becoming increasingly overloaded with features, when sometimes all you need is a simple place to write a few thoughts and organize them into a small number of categories.",
+        ],
+        imgs : [],
+      },
+      {
+        link : "",
+        github: "https://github.com/BLz13/backend-nest",
+        title : "Backend Final Project",
+        description : [
+          "This was my final project from my backend development course, built with NestJS and TypeScript. This was the point where I moved from learning individual backend concepts to putting them together into a more complete, modular application.",
+          "The project is structured around several core areas, including authentication, buyers, products, orders, categories, manufacturers, and operators. It uses DTOs, entities, services, controllers, database modules, validation, and JWT-based authentication to organize the application and its business logic.",
+          "It also gave me experience working with both MongoDB/Mongoose and PostgreSQL/TypeORM, database migrations, environment configuration, API documentation with Swagger, and testing. I'm keeping it in the portfolio because it represents an important step in my progression from frontend-focused projects toward fullstack development and backend architecture."
+        ],
+        imgs : [],
+      },
+      {
+        link : "",
+        github: "https://github.com/BLz13/gpsGlutenFree",
+        title : "Gluten Free GPS",
+        description : [
+          "After finishing my courses, most of my work shifted toward projects for different companies, either as a full-time employee or as a part-time intern. As a result, I haven't worked on personal projects as much as I would have liked. This is one of the exceptions — a project I started working on gradually and continue to develop whenever I have the time.",
+          "The idea came from a personal experience after a trip. Given that I have Celiac Disease traveling to a different city often means figuring out where it is safe to eat, what places to visit, and whether food needs to be brought from home. It can turn what should be a simple part of traveling into a surprisingly exhausting research process.",
+          "The concept was straightforward: a simple web app that helps people find places with suitable food options in the city they're visiting. The challenge, however, is much more technical than the idea suggests. Working with maps can be complex or expensive, and identifying establishments with appropriate options requires a considerable amount of research. It's still a work in progress, but little by little, the idea is becoming a real application.",
+        ],
+        imgs : [],
+      }
+    ],
+    es : [
+      {
+        link : "https://coffeecap.vercel.app/",
+        github: "https://github.com/BLz13/GorraCafe-Lazo",
+        title : "Coffee Cap",
+        description : [
+          "Mi primer proyecto como desarrollador, realizado mientras aprendía los fundamentos del desarrollo web. Es una muestra de dónde empecé: HTML, CSS y algunos componentes de Bootstrap, sin frameworks ni herramientas o IA.",
+          "Decidí mantenerlo en el portfolio intencionalmente, junto con trabajos más recientes, para mostrar la evolución: cómo fueron cambiando el código, la estructura y las decisiones de diseño desde el primer día.",
+          "Fue desarrollado con un enfoque mobile-first y probado principalmente en dispositivos móviles y desktop, sin realizar una revisión completa en todos los tamaños de pantalla. Al ser uno de mis primeros proyectos, el HTML utiliza una gran variedad de etiquetas y el CSS adopta diferentes enfoques según la página, más como una etapa de exploración que como un sistema completamente consistente.",
+        ],
+        imgs : [],
+      },
+      {
+        link : "https://rock-pawper-claw.vercel.app/",
+        github: "https://github.com/BLz13/Rock-Pawper-Claw",
+        title : "Rock, Pawper, Claw",
+        description : [
+          "Mi segundo proyecto y el que marca el comienzo de mi trabajo más profundo con JavaScript. Fue aquí donde empecé a ir más allá de las páginas estáticas y a aprender cómo hacer que un sitio responda a las interacciones del usuario y manipule el DOM.",
+          "Está diseñado únicamente para desktop y no cuenta con un diseño responsive para pantallas más pequeñas. El proyecto utiliza JavaScript y manipulación del DOM de forma extensa, desde efectos basados en el scroll hasta la creación y agregado dinámico de elementos, además de algunos Easter eggs ocultos impulsados por una API.",
+          "Visto en perspectiva, este proyecto representa un paso importante en mi evolución porque fue la primera vez que empecé a pensar en una página como algo dinámico y no simplemente como un conjunto de elementos estilizados.",
+        ],
+        imgs : [],
+      },
+      {
+        link : "https://miniature-forest.vercel.app/",
+        github: "https://github.com/BLz13/MiniatureForest",
+        title : "Miniature Forest",
+        description : [
+          "Mi tercer proyecto representa el siguiente paso de esa evolución: el cambio de JavaScript vanilla a React. Aquí empecé a trabajar con componentes y con una forma más estructurada de construir interfaces, haciendo que las interacciones se sintieran más fluidas y naturales.",
+          "El proyecto está incompleto, pero decidí mantenerlo en el portfolio porque representa mi primera experiencia con React. Muestra el momento en el que empecé a cambiar mi forma de abordar el desarrollo frontend y a acercarme a las herramientas y patrones que utilizo en proyectos más recientes.",
+          "Es otra muestra del proceso de aprendizaje y no un producto terminado, y justamente por eso quiero conservarlo: hace visible la evolución de mi trabajo.",
+        ],
+        imgs : [],
+      },
+      {
+        link : "",
+        github: "https://github.com/BLz13/NotesApp",
+        title : "Note'it",
+        description : [
+          "Para finalizar mi curso de desarrollo frontend, decidí aprender los fundamentos de React Native, y eso es lo que representa este proyecto. Fue una oportunidad para llevar los conocimientos que había adquirido en la web y empezar a aplicarlos en una aplicación móvil.",
+          "La idea era intencionalmente simple: un bloc de notas mejorado, sin cuentas en la nube, usuarios ni contraseñas. Solo un campo de texto, una tabla SQL sencilla para almacenar los datos y la posibilidad de acompañar una nota con una imagen.",
+          "La intención del proyecto era mantener la experiencia lo más simple posible. Sentía que las aplicaciones de notas estaban incorporando cada vez más funciones, cuando muchas veces solo necesitas un lugar sencillo para escribir algunas ideas y organizarlas en unas pocas categorías.",
+        ],
+        imgs : [],
+      },
+      {
+        link : "",
+        github: "https://github.com/BLz13/backend-nest",
+        title : "Backend Final Project",
+        description : [
+          "Este fue mi proyecto final del curso de desarrollo backend, desarrollado con NestJS y TypeScript. Este proyecto representa el momento en el que pasé de aprender conceptos individuales de backend a integrarlos dentro de una aplicación más completa y modular.",
+          "El proyecto está organizado en diferentes áreas principales, incluyendo autenticación, compradores, productos, órdenes, categorías, fabricantes y operadores. Utiliza DTOs, entidades, servicios, controladores, módulos de base de datos, validación y autenticación basada en JWT para organizar la aplicación y su lógica de negocio.",
+          "También me permitió adquirir experiencia trabajando tanto con MongoDB/Mongoose como con PostgreSQL/TypeORM, migraciones de base de datos, configuración mediante variables de entorno, documentación de la API con Swagger y testing. Decidí mantenerlo en el portfolio porque representa un paso importante en mi evolución desde proyectos principalmente frontend hacia el desarrollo fullstack y la arquitectura backend."
+        ],
+        imgs : [],
+      },
+      {
+        link : "",
+        github: "https://github.com/BLz13/gpsGlutenFree",
+        title : "Gluten Free GPS",
+        description : [
+          "Después de terminar mis cursos, la mayor parte de mi trabajo pasó a centrarse en proyectos para diferentes empresas, ya fuera como empleado de tiempo completo o como pasante de medio tiempo. Como resultado, no trabajé tanto en proyectos personales como me hubiera gustado. Este es una de las excepciones: un proyecto que comencé a desarrollar de forma gradual y que sigo trabajando cuando tengo tiempo.",
+          "La idea surgió a partir de una experiencia personal después de un viaje. Siendo celiaco viajar a una ciudad diferente muchas veces implica investigar dónde es seguro comer, qué lugares visitar y si es necesario llevar comida desde casa. Algo que debería ser una parte sencilla del viaje puede convertirse en un proceso de investigación bastante agotador.",
+          "El concepto era sencillo: una aplicación web que permita encontrar lugares con opciones adecuadas para comer en la ciudad que estás visitando. Sin embargo, el desafío es mucho más técnico de lo que parece. Trabajar con mapas puede ser complejo o costoso, y encontrar establecimientos con opciones adecuadas requiere bastante investigación. Todavía está en desarrollo, pero poco a poco la idea se está convirtiendo en una aplicación real.",
+        ],
+        imgs : [],
+      }
+    ]
   },
   magicButton : {
-    es : 'hace click',
-    en : 'press me'
+    es : 'aplicar estilos',
+    en : 'apply styles'
   }
 };

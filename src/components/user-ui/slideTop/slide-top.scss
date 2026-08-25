@@ -1,12 +1,10 @@
 
 .slide-up {
-    position: fixed;
+    position: relative;
     display: flex;
     align-items: center;
     flex-flow: column nowrap;
     gap: 0;
-    top: 2vw;
-    left: 1vw;
     height: 2rem;
     width: 40px;
     justify-self: center;
@@ -46,7 +44,7 @@
         transform: scale(2);
         
         path {
-            fill: white;
+            fill: var(--main);
         }
     }
 

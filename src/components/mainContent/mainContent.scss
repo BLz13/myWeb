@@ -18,7 +18,16 @@
     z-index: 5;
     box-sizing: border-box;
     transition: all 300ms ease-in-out;
-    animation: entranceAnimation 1000ms 1 forwards;
+    animation: entranceAnimation 500ms 1 forwards;
+    color: var(--alt);
+
+    &.show {
+        animation: showCV 500ms ease-in-out forwards;
+    }
+
+    &.hide {            
+        animation: hideCV 500ms ease-in-out forwards;
+    }
 
     &.shorten { width: calc(-5vw + 100vw - 2vw - 30vw - 5vw); }
 
@@ -37,25 +46,44 @@
         font-size: 2.5rem;
     }
 
-    ul {
+    ul:not(.gallery-cnt) {
         margin-left: 30px;
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 7px;
+        
+        li {
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 30px;
+            padding-left: 5px;
+
+            &::marker {
+                content: "{";
+                font-family: $font-backup;
+                font-weight: 300;
+                font-size: 20px;
+            }
+        }
+    }
+
+    hr {
+        width: 100%;
+        height: 0px;
+        transition: border 300ms;
+        border: 1px solid var(--alt);
+        border-radius: 10px;
     }
 
     > div {
-
         &:not(#start) {
             margin-top: 50px;
         }
-           
-        animation: showCV 300ms ease-out;        
-        background: white;
+        
+        transition: background 300ms;
+        background: var(--main);
         border-radius: 20px;
         padding: 5dvh 30px;
-        
-        &.hide {            
-            animation: hideCV 300ms ease-out;
-        }
-        
     }
 
     .separator {
@@ -65,8 +93,9 @@
         justify-content: space-between;
 
         span {
-            border: 1px solid #000;
-            background-color: #000;
+            transition: borders 300ms background-color 300ms;
+            border: 1px solid var(--alt);
+            background-color: var(--alt);
             border-radius: 2px;
             width: 30%;
         }
@@ -77,7 +106,7 @@
         flex-flow: column nowrap;
         gap: 5px;
         align-items: center;
-        margin-top: 15px;
+        margin-top: 30px;
 
         svg {
             height: 20vh;
@@ -85,7 +114,8 @@
 
             #lTop,
             #lBottom {
-                fill: black;
+                transition: fill 300ms;
+                fill: var(--alt);
             }
         }
 
@@ -136,7 +166,7 @@
             font-family: $font-backup;
             font-size: 1.3rem;
             text-decoration: none;
-            color: #000;
+            color: var(--alt);
             text-transform: uppercase;
         }
 
@@ -145,7 +175,8 @@
             width: auto ;
 
             g path:nth-child(2) {
-                fill: $black;
+                transition: fill 300ms;
+                fill: var(--alt);
             }   
         }
 
@@ -209,12 +240,13 @@
         }
 
         svg path:nth-child(2){
-            fill: white;
+            fill: var(--main);
         }
     }
 
     #experience,
-    #education {
+    #education,
+    #skills {
         display: flex;
         flex-flow: column nowrap;
         gap: 30px;
@@ -252,6 +284,46 @@
 
     }
 
+    #skills {
+        > ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 5%;
+            
+            > li {
+                &:nth-last-child(1) {
+                    grid-column: span 2;
+                }
+            }
+        }
+    }
+
+    #projects {
+        display: flex;
+        flex-flow: column nowrap;
+        box-sizing: border-box;
+        gap: 50px;
+        min-width: 0;
+        width: 100%;
+
+        > ul {
+            min-width: 0;
+            width: calc( 100% - 30px );
+            gap: 100px;
+            box-sizing: border-box;
+            
+            > li {
+                display: flex;
+                flex-flow: column nowrap;
+                box-sizing: border-box;
+                position: relative;
+                gap: 30px;
+                width: 100%;
+            }
+        }
+        
+    }
+
 }
 
 @keyframes entranceAnimation {
@@ -266,19 +338,13 @@
 }
 
 @keyframes hideCV {
-    from {
-        opacity: 1;
-    }
     to {
-        opacity: 0;
+        color: transparent;
     }
 }
 
 @keyframes showCV {
     from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
+        color: transparent;
     }
 }

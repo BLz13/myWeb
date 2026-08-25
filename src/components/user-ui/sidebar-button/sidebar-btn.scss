@@ -7,9 +7,6 @@ $height: 40px;
     
 .sidebar-button-container {
 
-    position: fixed;
-    top: 15px;
-    right: 1vw;
     height: $height;
     width: $width;
     aspect-ratio: 1;
@@ -76,7 +73,7 @@ $height: 40px;
 
         * {
             transition: transform 300ms, opacity 300ms, transform-origin 300ms;
-            stroke: white;
+            stroke: var(--main);
         }
 
         #barTop {

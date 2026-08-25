@@ -1,14 +1,6 @@
 
 @use "sass:map";
 
-
-/* Color Palette */
-
-$white: #FFFFFF;
-
-$black: #000000;
-
-
 //BLUE
 
 $lightBlue-50:  #D1DEF0;
@@ -75,6 +67,21 @@ $green-700: #187177;
 $green-800: #146166;
 $green-900: #115055;
 
+:root,
+[data-theme="light"] {
+    --main: #FFF;
+    --alt: #000;
+
+    --gradient : -60deg, #{$lightBlue-900}, #{$darkBlue-900}, #{$purple-900}, #{$pink-900}, #{$green-900};
+}
+
+[data-theme="dark"] {
+    --main: #000;
+    --alt: #FFF;
+
+    --gradient : 60deg, #{$lightBlue-500}, #{$darkBlue-50}, #{$purple-50}, #{$pink-500}, #{$green-500};
+}
+
 /*
 $animated-gradient: linear-gradient(
     -60deg,
@@ -89,14 +96,7 @@ $animated-gradient: linear-gradient(
 $gradient-size: 200vw 200vh;
 
 $animated-gradient: (
-    background-image: linear-gradient(
-        -60deg,
-        $lightBlue-900,
-        $darkBlue-900,
-        $purple-900,
-        $pink-900,
-        $green-900
-    ),
+    background-image: linear-gradient(var(--gradient) ),
     background-size: 200vw 200vh,
     left: -50%,
     right: -50%,
