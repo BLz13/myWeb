@@ -89,7 +89,7 @@ export default function MainContent() {
 
       case "projects": return (
         <div key={item} id={item}>
-            <Projects data={data} sectionName={SECTIONS[displayLang][i]}/>
+            <Projects data={data} lang={displayLang} sectionName={SECTIONS[displayLang][i]}/>
         </div>
       );
 

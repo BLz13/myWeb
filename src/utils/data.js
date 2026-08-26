@@ -222,6 +222,90 @@ export const TEXT = {
         imgs : {
           link : "/images/projects/coffee-cap/coffee-cap-",
           alts : [
+            "Main page screen in mobile mode",
+            "Main page screen in desktop mode",
+            "Menu on the main page in mobile mode",
+            "Menu on the main page in desktop mode",
+            "Section two of the main page in mobile mode",
+            "Section three of the main page in mobile mode",
+            "Section two of the main page in desktop mode",
+            "Section three of the main page in desktop mode",
+            "Section four of the main page in mobile mode",
+            "Footer on the main page",
+            'First section of the "About Us" page in desktop mode',
+            'First section of the "About Us" page in mobile mode',
+            'Second section of the "About Us" page in mobile mode',
+            'Second section of the "About Us" page in desktop mode',
+            'Third section of the "About Us" page in desktop mode',
+            'Fourth section of the "About Us" page in desktop mode',
+            'Fifth section of the "About Us" page in desktop mode',
+            'Sixth section of the "About Us" page in desktop mode',
+            'First part of the coffee section of the "Our Menu" page in desktop mode',
+            'Second part of the coffee section of the "Our Menu" page in desktop mode',
+            'Food section of the "Our Menu" page in mobile mode',
+            'Other drinks section of the "Our Menu" page in mobile mode',
+            "Contact page in desktop format",
+            "Contact page in mobile format",
+            "Subscription page in mobile format",
+            "Subscription page in desktop format"
+          ]
+        }
+      },
+      {
+        link : "https://rock-pawper-claw.vercel.app/",
+        github: "https://github.com/BLz13/Rock-Pawper-Claw",
+        title : "Rock, Pawper, Claw",
+        description : [
+          "My second project, and the one that marks the beginning of my deeper work with JavaScript. This is where I started moving beyond static pages and learning how to make a website react to user interaction and manipulate the DOM.",
+          "It's designed for desktop only, with no responsive layout for smaller screens. The project makes extensive use of JavaScript and DOM manipulation, from scroll-based effects to dynamically creating and appending elements, along with a few hidden Easter eggs powered by an API.",
+          "Looking back, this project is an important step in my progression because it was the first time I started thinking about the page as something dynamic rather than just a collection of styled elements.",
+        ],
+        imgs : {
+          link : "/images/projects/rock-pawper-claw/rock-pawper-claw-",
+          alts : [
+            "Home screen of personal web project, showcasing a game of rock, paper and scissors ",
+            "Fields available to complete with personal name on the game",
+            'Initial screen of the game showing three images one of a cat claw one of a cat paw and one of a "fist"',
+            "Demonstration of how the game looks",
+            "An advanced game"
+          ]
+        }
+      },
+      {
+        link : "https://miniature-forest.vercel.app/",
+        github: "https://github.com/BLz13/MiniatureForest",
+        title : "Miniature Forest",
+        description : [
+          "My third project represents the next step in that progression: moving from vanilla JavaScript to React. This is where I started working with components and a more structured approach to building interfaces, while making the interactions feel smoother and more fluid.",
+          "The project is unfinished, but I'm keeping it in the portfolio because it marks my first experience with React. It shows the point where I started changing the way I approached frontend development and moving toward the tools and patterns I use in more recent projects.",
+          "It's another snapshot of the learning process rather than a finished product, and that's exactly why I want it here — to make the progression visible.",
+        ],
+        imgs : {
+          link : "/images/projects/miniature-forest/miniature-forest-",
+          alts : [
+            "Hero of homepage",
+            "Menu of the site",
+            "Second section of home page showcasing some of the site's products",
+            "Second section of homepage expanded",
+            "Header cart expanded showing the product has been added to the cart",
+            "About Us page",
+            "Categories page",
+            "Categories page product view expanded"
+          ]
+        }
+      },
+      {
+        link : "",
+        github: "https://github.com/BLz13/NotesApp",
+        title : "Note'it",
+        description : [
+          "To wrap up my frontend development course, I decided to learn the fundamentals of React Native, and that's what this project represents. It was an opportunity to take what I had learned on the web and start applying the same ideas to a mobile application.",
+          "The concept was intentionally simple: an upgraded notepad with no cloud accounts, usernames, or passwords. Just a text field, a simple SQL table to store the data, and the possibility of pairing an image with a note.",
+          "The idea behind the project was to keep the experience as stripped-down as possible. I felt that note-taking apps were becoming increasingly overloaded with features, when sometimes all you need is a simple place to write a few thoughts and organize them into a small number of categories.",
+        ],
+        imgs : {
+          link : "/images/projects/note-it/note-it-",
+          alts : [
             "",
             "",
             "",
@@ -250,40 +334,7 @@ export const TEXT = {
             ""          
 
           ]
-        },
-      },
-      {
-        link : "https://rock-pawper-claw.vercel.app/",
-        github: "https://github.com/BLz13/Rock-Pawper-Claw",
-        title : "Rock, Pawper, Claw",
-        description : [
-          "My second project, and the one that marks the beginning of my deeper work with JavaScript. This is where I started moving beyond static pages and learning how to make a website react to user interaction and manipulate the DOM.",
-          "It's designed for desktop only, with no responsive layout for smaller screens. The project makes extensive use of JavaScript and DOM manipulation, from scroll-based effects to dynamically creating and appending elements, along with a few hidden Easter eggs powered by an API.",
-          "Looking back, this project is an important step in my progression because it was the first time I started thinking about the page as something dynamic rather than just a collection of styled elements.",
-        ],
-        imgs : [],
-      },
-      {
-        link : "https://miniature-forest.vercel.app/",
-        github: "https://github.com/BLz13/MiniatureForest",
-        title : "Miniature Forest",
-        description : [
-          "My third project represents the next step in that progression: moving from vanilla JavaScript to React. This is where I started working with components and a more structured approach to building interfaces, while making the interactions feel smoother and more fluid.",
-          "The project is unfinished, but I'm keeping it in the portfolio because it marks my first experience with React. It shows the point where I started changing the way I approached frontend development and moving toward the tools and patterns I use in more recent projects.",
-          "It's another snapshot of the learning process rather than a finished product, and that's exactly why I want it here — to make the progression visible.",
-        ],
-        imgs : [],
-      },
-      {
-        link : "",
-        github: "https://github.com/BLz13/NotesApp",
-        title : "Note'it",
-        description : [
-          "To wrap up my frontend development course, I decided to learn the fundamentals of React Native, and that's what this project represents. It was an opportunity to take what I had learned on the web and start applying the same ideas to a mobile application.",
-          "The concept was intentionally simple: an upgraded notepad with no cloud accounts, usernames, or passwords. Just a text field, a simple SQL table to store the data, and the possibility of pairing an image with a note.",
-          "The idea behind the project was to keep the experience as stripped-down as possible. I felt that note-taking apps were becoming increasingly overloaded with features, when sometimes all you need is a simple place to write a few thoughts and organize them into a small number of categories.",
-        ],
-        imgs : [],
+        }
       },
       {
         link : "",
@@ -294,7 +345,63 @@ export const TEXT = {
           "The project is structured around several core areas, including authentication, buyers, products, orders, categories, manufacturers, and operators. It uses DTOs, entities, services, controllers, database modules, validation, and JWT-based authentication to organize the application and its business logic.",
           "It also gave me experience working with both MongoDB/Mongoose and PostgreSQL/TypeORM, database migrations, environment configuration, API documentation with Swagger, and testing. I'm keeping it in the portfolio because it represents an important step in my progression from frontend-focused projects toward fullstack development and backend architecture."
         ],
-        imgs : [],
+        imgs : {
+          link : "/images/projects/coffee-cap/coffee-cap-",
+          alts : [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""          
+
+          ]
+        }
+      },
+      {
+        link : "https://tech.lader.com.ar/",
+        github: "",
+        title : "Tech BA E-Commerce",
+        description : [
+          "My first major project as a developer, built as the final project of my internship at Lader Agency. Unlike my earlier personal projects, this was a real e-commerce website built for an active business, which meant working within an existing ecosystem while also finding ways to personalize and extend it.",
+          "The site is primarily powered by WordPress and WooCommerce, but a large part of the work went beyond the default platform. I made extensive JavaScript and PHP customizations to adapt the interface, improve the user experience, and implement functionality specific to the project. The site includes product categories, individual product pages, shopping and cart functionality, responsive layouts, and the different content and commercial sections required by a real online store.",
+          "This project represents an important point in my progression because it was my first opportunity to take what I had learned from smaller experimental projects and apply it to a larger production website with real requirements, an existing CMS and e-commerce platform, and a much greater need for customization, structure, and maintainability."
+        ],
+        imgs : {
+          link : "/images/projects/tech-ba/tech-ba-",
+          alts : [
+            "Hero section of the Tech BA e-commerce homepage",
+            "Tech BA e-commerce homepage",
+            "Tech BA footer in mobile mode",
+            "Hero section of the Tech BA e-commerce homepage in mobile mode",
+            "Products page on Tech BA",
+            "Tech BA e-commerce homepage in mobile mode",
+            "Tech BA menu in mobile mode",
+            "Products page on Tech BA in mobile mode",
+            "First section of the product page in mobile mode",
+            "Second section of the product page in mobile mode"
+          ]
+        }
       },
       {
         link : "",
@@ -305,7 +412,38 @@ export const TEXT = {
           "The idea came from a personal experience after a trip. Given that I have Celiac Disease traveling to a different city often means figuring out where it is safe to eat, what places to visit, and whether food needs to be brought from home. It can turn what should be a simple part of traveling into a surprisingly exhausting research process.",
           "The concept was straightforward: a simple web app that helps people find places with suitable food options in the city they're visiting. The challenge, however, is much more technical than the idea suggests. Working with maps can be complex or expensive, and identifying establishments with appropriate options requires a considerable amount of research. It's still a work in progress, but little by little, the idea is becoming a real application.",
         ],
-        imgs : [],
+        imgs : {
+          link : "/images/projects/coffee-cap/coffee-cap-",
+          alts : [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""          
+
+          ]
+        }
       }
     ],
     es : [
@@ -318,7 +456,37 @@ export const TEXT = {
           "Decidí mantenerlo en el portfolio intencionalmente, junto con trabajos más recientes, para mostrar la evolución: cómo fueron cambiando el código, la estructura y las decisiones de diseño desde el primer día.",
           "Fue desarrollado con un enfoque mobile-first y probado principalmente en dispositivos móviles y desktop, sin realizar una revisión completa en todos los tamaños de pantalla. Al ser uno de mis primeros proyectos, el HTML utiliza una gran variedad de etiquetas y el CSS adopta diferentes enfoques según la página, más como una etapa de exploración que como un sistema completamente consistente.",
         ],
-        imgs : [],
+        imgs : {
+          link : "/images/projects/coffee-cap/coffee-cap-",
+          alts : [
+            "Pantalla principal de la pagina en modo mobile",
+            "Pantalla principal de la pagina en modo desktop",
+            "Menu en pantalla principal de la pagina en modo mobile",
+            "Menu en pantalla principal de la pagina en modo desktop",
+            "Sección dos de la pagina principal en modo mobile",
+            "Sección tres de la pagina principal en modo mobile",
+            "Sección dos de la pagina principal en modo desktop",
+            "Sección tres de la pagina principal en modo desktop",
+            "Sección cuatro de la pagina principal en modo mobile",
+            "Footer en la pagina principal",
+            'Pagina "Sobre Nosotros" primera sección en desktop',
+            'Pagina "Sobre Nosotros" primera sección en mobile',
+            'Pagina "Sobre Nosotros" segunda sección en mobile',
+            'Pagina "Sobre Nosotros" segunda sección en desktop',
+            'Pagina "Sobre Nosotros" tercera sección en desktop',
+            'Pagina "Sobre Nosotros" cuarta sección en desktop',
+            'Pagina "Sobre Nosotros" quinta sección en desktop',
+            'Pagina "Sobre Nosotros" sexta sección en desktop',
+            'Pagina "Nuestra carta" sección de cafes parte uno en desktop',
+            'Pagina "Nuestra carta" sección de cafes parte dos en desktop',
+            'Pagina "Nuestra carta" sección de salados en mobile',
+            'Pagina "Nuestra carta" sección de otras bebidas en mobile',
+            "Pagina de contacto en formato desktop",
+            "Pagina de contacto en formato mobile",
+            "Pagina de suscripción en formato mobile",
+            "Pagina de suscripción en formato desktop"
+          ]
+        }
       },
       {
         link : "https://rock-pawper-claw.vercel.app/",
@@ -329,7 +497,16 @@ export const TEXT = {
           "Está diseñado únicamente para desktop y no cuenta con un diseño responsive para pantallas más pequeñas. El proyecto utiliza JavaScript y manipulación del DOM de forma extensa, desde efectos basados en el scroll hasta la creación y agregado dinámico de elementos, además de algunos Easter eggs ocultos impulsados por una API.",
           "Visto en perspectiva, este proyecto representa un paso importante en mi evolución porque fue la primera vez que empecé a pensar en una página como algo dinámico y no simplemente como un conjunto de elementos estilizados.",
         ],
-        imgs : [],
+        imgs : {
+          link : "/images/projects/rock-pawper-claw/rock-pawper-claw-",
+          alts : [
+            "Pantalla principal del juego de piedra papel y tijera pero utilizando gatos",
+            "Campos disponibles para ingresar tu nombre y guardar la partida",
+            'Imagen principal del juego en la que se muestran una unas patas de gato ilustrando el clásico piedra papel y tijera',
+            "Demostración de una partida en curso",
+            "Una partida de juego avanzada"
+          ]
+        }
       },
       {
         link : "https://miniature-forest.vercel.app/",
@@ -340,7 +517,19 @@ export const TEXT = {
           "El proyecto está incompleto, pero decidí mantenerlo en el portfolio porque representa mi primera experiencia con React. Muestra el momento en el que empecé a cambiar mi forma de abordar el desarrollo frontend y a acercarme a las herramientas y patrones que utilizo en proyectos más recientes.",
           "Es otra muestra del proceso de aprendizaje y no un producto terminado, y justamente por eso quiero conservarlo: hace visible la evolución de mi trabajo.",
         ],
-        imgs : [],
+        imgs : {
+          link : "/images/projects/coffee-cap/coffee-cap-",
+          alts : [
+            "Hero de la página principal",
+            "Menú del sitio",
+            "Segunda sección de la página principal mostrando algunos de los productos del sitio",
+            "Segunda sección de la página principal expandida",
+            "Carrito del header expandido mostrando que el producto fue agregado al carrito",
+            "Página de Sobre Nosotros",
+            "Página de categorías",
+            "Vista de productos de la página de categorías expandida"
+          ]
+        }
       },
       {
         link : "",
@@ -351,7 +540,38 @@ export const TEXT = {
           "La idea era intencionalmente simple: un bloc de notas mejorado, sin cuentas en la nube, usuarios ni contraseñas. Solo un campo de texto, una tabla SQL sencilla para almacenar los datos y la posibilidad de acompañar una nota con una imagen.",
           "La intención del proyecto era mantener la experiencia lo más simple posible. Sentía que las aplicaciones de notas estaban incorporando cada vez más funciones, cuando muchas veces solo necesitas un lugar sencillo para escribir algunas ideas y organizarlas en unas pocas categorías.",
         ],
-        imgs : [],
+        imgs : {
+          link : "/images/projects/note-it/note-it-",
+          alts : [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""          
+
+          ]
+        }
       },
       {
         link : "",
@@ -362,7 +582,63 @@ export const TEXT = {
           "El proyecto está organizado en diferentes áreas principales, incluyendo autenticación, compradores, productos, órdenes, categorías, fabricantes y operadores. Utiliza DTOs, entidades, servicios, controladores, módulos de base de datos, validación y autenticación basada en JWT para organizar la aplicación y su lógica de negocio.",
           "También me permitió adquirir experiencia trabajando tanto con MongoDB/Mongoose como con PostgreSQL/TypeORM, migraciones de base de datos, configuración mediante variables de entorno, documentación de la API con Swagger y testing. Decidí mantenerlo en el portfolio porque representa un paso importante en mi evolución desde proyectos principalmente frontend hacia el desarrollo fullstack y la arquitectura backend."
         ],
-        imgs : [],
+        imgs : {
+          link : "/images/projects/coffee-cap/coffee-cap-",
+          alts : [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""          
+
+          ]
+        }
+      },
+      {
+        link : "https://tech.lader.com.ar/",
+        github: "",
+        title : "Tech BA E-Commerce",
+        description : [
+          "Mi primer proyecto de gran escala como desarrollador, realizado como proyecto final de mi pasantía en Agencia Lader. A diferencia de mis primeros proyectos personales, este fue un sitio de e-commerce real desarrollado para un negocio activo, lo que implicó trabajar dentro de un ecosistema existente y, al mismo tiempo, buscar formas de personalizarlo y ampliarlo.",
+          "El sitio está desarrollado principalmente con WordPress y WooCommerce, pero gran parte del trabajo fue más allá de las funcionalidades que ofrece la plataforma por defecto. Realicé numerosas modificaciones con CSS, JavaScript y PHP para adaptar la interfaz, mejorar la experiencia de usuario e implementar funcionalidades específicas del proyecto. El sitio incluye categorías de productos, páginas individuales de productos, funcionalidades de compra y carrito, diseños responsive y las diferentes secciones de contenido y comerciales necesarias para una tienda online real.",
+          "Este proyecto representa un punto importante en mi evolución porque fue mi primera oportunidad de llevar lo aprendido en proyectos experimentales más pequeños a un sitio de producción de mayor escala, con requerimientos reales, un CMS y una plataforma de e-commerce existentes, y una necesidad mucho mayor de personalización, estructura y mantenibilidad."
+        ],
+        imgs : {
+          link : "/images/projects/tech-ba/tech-ba-",
+          alts : [
+            "Hero de la pagina principal del e-commerce de Tech BA",
+            "Pagina principal del e-commerce de Tech BA",
+            "Footer en modo mobile de Tech BA",
+            "Hero de la pagina principal del e-commerce de Tech BA en mobile",
+            "Pagina de productos en Tech BA",
+            "Pagina principal del e-commerce de Tech BA en modo mobile",
+            "Menu en modo mobile de Tech BA",
+            "Pagina de productos en Tech BA en mobile",
+            "Primera sección de la pagina de producto en mobile",
+            "Segunda sección de la pagina de producto en mobile"
+          ]
+        }
       },
       {
         link : "",
@@ -373,7 +649,38 @@ export const TEXT = {
           "La idea surgió a partir de una experiencia personal después de un viaje. Siendo celiaco viajar a una ciudad diferente muchas veces implica investigar dónde es seguro comer, qué lugares visitar y si es necesario llevar comida desde casa. Algo que debería ser una parte sencilla del viaje puede convertirse en un proceso de investigación bastante agotador.",
           "El concepto era sencillo: una aplicación web que permita encontrar lugares con opciones adecuadas para comer en la ciudad que estás visitando. Sin embargo, el desafío es mucho más técnico de lo que parece. Trabajar con mapas puede ser complejo o costoso, y encontrar establecimientos con opciones adecuadas requiere bastante investigación. Todavía está en desarrollo, pero poco a poco la idea se está convirtiendo en una aplicación real.",
         ],
-        imgs : [],
+        imgs : {
+          link : "/images/projects/coffee-cap/coffee-cap-",
+          alts : [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""          
+
+          ]
+        }
       }
     ]
   },
