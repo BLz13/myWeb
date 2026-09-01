@@ -1,13 +1,31 @@
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
+
+import ChevronDownIcon from "../../assets/svg/chevron-down.svg?react";
 
 export default function Experience({ data, sectionName }) {
 
     const [labels, ...experiences] = data ?? [];
 
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
+    
+    useEffect(() => {
+
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 1024);
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+
+    }, []);
+
     return (
         <>
             <h2>
-                <strong>{sectionName}</strong>
+                <strong>{sectionName} :</strong>
             </h2>
 
             <ul>
@@ -21,13 +39,38 @@ export default function Experience({ data, sectionName }) {
                             <li>
                                 <h3>{exp?.company}</h3>
 
+                                <>
+                                    {isMobile ? (
+                                        <>
+                                            <p>
+                                                <strong>{exp?.title}</strong>
+                                            </p>
+                                            <p>
+                                                {exp?.place}
+                                            </p>
+                                        </>
+                                    ) : (
+                                        <p>
+                                            <strong>{exp?.title}</strong> - {exp?.place}
+                                        </p>
+                                    )}
+                                </>
+
                                 <p>
-                                    <strong>{exp?.title}</strong> - {exp?.place}
+                                    {isMobile ? (
+                                        <>
+                                            <span>{exp?.timeSince}</span>
+                                            <ChevronDownIcon />
+                                            <span>{exp?.timeTo}</span>
+                                        </>
+                                    ) : (
+                                        <>
+                                            {exp?.timeSince} - {exp?.timeTo}
+                                        </>
+                                    )}
                                 </p>
 
-                                <p>{exp?.time}</p>
-
-                                <h4>{labels?.[4]}</h4>
+                                <h4>{labels?.[4]} :</h4>
 
                                 <ul>
                                     {exp?.tasks?.map((task, tIdx) => (

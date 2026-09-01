@@ -91,7 +91,8 @@ export const TEXT = {
         company : 'lader agency',
         place : 'buenos aires, argentina (remote)',
         title : 'jr frontend developer',
-        time : 'september 2023 – march 2024',
+        timeSince : 'september 2023',
+        timeTo : 'march 2024',
         tasks : [
           "Developed and redesigned websites and e-commerce stores using WordPress, WooCommerce, CSS, and JavaScript, improving usability and visual performance across all delivered projects.",
           "Integrated custom components via Elementor and basic PHP, tailoring CMS functionality to meet each client's specific requirements.",
@@ -102,7 +103,8 @@ export const TEXT = {
         company : 'publissoft',
         place : 'quebec, canada (remote)',
         title : 'fullstack developer',
-        time : 'august 2024 - august 2026 ',
+        timeSince : 'august 2024',
+        timeTo : 'august 2026',
         tasks : [
           "Developed and redesigned websites and e-commerce stores using WordPress, CSS, and JavaScript, achieving an average 30% reduction in page load time through asset optimization and code structure improvements.",
           "Built automated workflows with N8N that eliminated repetitive manual tasks for the team, reducing time spent on operational processes by approximately 40%.",
@@ -118,7 +120,8 @@ export const TEXT = {
         company : 'agencia lader',
         place : 'buenos aires, argentina (remoto)',
         title : 'desarrollador frontend jr',
-        time : 'septiembre 2023 – marzo 2024',
+        timeSince : 'septiembre 2023',
+        timeTo : 'marzo 2024',
         tasks : [
           "Desarrollé y rediseñé sitios web y tiendas e-commerce con WordPress, WooCommerce, CSS y JavaScript, mejorando la usabilidad y el visual de los proyectos entregados.",
           "Integré componentes personalizados mediante Elementor y PHP básico, adaptando las funcionalidades del CMS a los requerimientos específicos de cada cliente.",
@@ -129,7 +132,8 @@ export const TEXT = {
         company : 'publissoft',
         place : 'quebec, canadá (remoto)',
         title : 'desarrollador fullstack',
-        time : 'agosto 2024 - agosto 2026',
+        timeSince : 'agosto 2024',
+        timeTo : 'agosto 2026',
         tasks : [
           "Desarrollé y rediseñé sitios web y e-commerce con WordPress, CSS y JavaScript, logrando una reducción promedio del 30% en el tiempo de carga de páginas mediante optimización de assets y estructura de código.",
           "Implementé automatizaciones con N8N que eliminaron tareas manuales repetitivas del equipo, reduciendo el tiempo dedicado a procesos operativos en aproximadamente un 40%.",
@@ -147,21 +151,24 @@ export const TEXT = {
         place : 'UNMDP (Mar del Plata National University)',
         site : 'mar del plata, argentina',
         title : 'software engineering',
-        time : 'march 2019 - present',
+        timeSince : 'march 2019',
+        timeTo : 'present',
         status : 'currently attending third year'
       },
       {
         place : 'coder house',
         site : 'mar del plata, argentina',
         title : 'frontend and mobile development',
-        time : 'july 2022 - march 2023',
+        timeSince : 'july 2022',
+        timeTo : 'march 2023',
         status : 'completed'
       },
       {
         place : 'north carolina wesleyan college',
         site : 'rocky mount, north carolina, USA',
         title : 'bachelor in computer science',
-        time : 'september 2018 - december 2018',
+        timeSince : 'september 2018',
+        timeTo : 'december 2018',
         status : 'unfinished'
       }
     ],
@@ -171,21 +178,24 @@ export const TEXT = {
         place : 'universidad nacional de mar del plata',
         site : 'mar del plata, argentina',
         title : 'ingeniería en informática',
-        time : 'marzo 2019 - presente',
+        timeSince : 'marzo 2019',
+        timeTo : 'presente',
         status : 'actualmente cursando tercer año'
       },
       {
         place : 'coder house',
         site : 'mar del plata, argentina',
         title : 'desarrollo frontend y mobile',
-        time : 'julio 2022 - marzo 2023',
+        timeSince : 'julio 2022',
+        timeTo : 'marzo 2023',
         status : 'completado'
       },
       {
         place : 'north carolina wesleyan college',
         site : 'rocky mount, north carolina, EE. UU',
         title : 'bachelor en computer science',
-        time : 'septiembre 2018 - diciembre 2018',
+        timeSince : 'septiembre 2018',
+        timeTo : 'diciembre 2018',
         status : 'incompleto'
       }
     ]
@@ -197,7 +207,13 @@ export const TEXT = {
       ['React.js', 'React Native', 'Nest.js', 'Node.js'],
       ['MySQL', 'PostgreSQL', 'MongoDB (Mongoose, TypeORM)'],
       ['WordPress', 'Elementor', 'WooCommerce', 'Git/GitHub', 'Docker', 'N8N', 'Figma'],
-      ["Spanish (native speaker)", "C2 English – Certifications: SAT, TOEFL, Cambridge's First Certificate in English (FCE)"]
+      [
+        "Spanish (native speaker)",
+        {
+          title: "C2 English",
+          extra: "Certifications: SAT, TOEFL, Cambridge's First Certificate in English (FCE)"
+        }
+      ]
     ],
     es : [
       ["skills", "lenguajes de programación", "frameworks", "bases de datos", "herramientas", "idiomas"],
@@ -205,7 +221,13 @@ export const TEXT = {
       ['React.js', 'React Native', 'Nest.js', 'Node.js'],
       ['MySQL', 'PostgreSQL', 'MongoDB (Mongoose, TypeORM)'],
       ['WordPress', 'Elementor', 'WooCommerce', 'Git/GitHub', 'Docker', 'N8N', 'Figma'],
-      ['Español (nativo)', 'Inglés avanzado (oral y escrito) – Certificaciones: SAT, TOEFL, First Certificate in English (FCE) de Cambridge']
+      [
+        'Español (nativo)',
+        {
+          title: 'Inglés avanzado',
+          extra: 'Certificaciones: SAT, TOEFL, First Certificate in English (FCE) de Cambridge'
+        }
+      ]
     ]
   },
   projects : {

@@ -13,7 +13,8 @@ export default function MenuItems({ lang }) {
         switch (i) {
 
             case 1 :
-            case 2 : return (
+            case 2 : 
+            case 4 : return (
                 <Fragment key={item}>
                     <li>
                         <span 
@@ -31,7 +32,7 @@ export default function MenuItems({ lang }) {
                 </Fragment>               
             )
 
-            case 4: return (
+            case 5: return (
                 <li key={item}>
                     <span 
                         onClick={ () => scrollToSection(ids[i]) }

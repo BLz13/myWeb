@@ -35,7 +35,7 @@ export default function Projects({ data, lang, sectionName }) {
 
     return (
         <>
-            <h2><strong>{sectionName}</strong></h2>
+            <h2><strong>{sectionName} :</strong></h2>
 
             <ul>
                 {projectsData.map((project, i) => {

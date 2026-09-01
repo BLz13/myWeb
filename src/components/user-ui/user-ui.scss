@@ -41,22 +41,14 @@
         > * {
             pointer-events: auto;
         }
+        
+        .section-right {
+            right: 0;
+            top: 0;
+            width: auto;
+            margin: 15px 2vw 15px 0;
+        }
+        
     }
 
-    .user-ui .section-right {
-        right: 12px;
-        top: 12px;
-        width: auto;
-        margin: 0;
-    }
-
-    .user-ui .section-left {
-        left: 12px;
-        bottom: 12px;
-        top: auto;
-        width: auto;
-        height: auto;
-        margin: 0;
-        gap: 12px;
-    }
 }

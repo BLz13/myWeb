@@ -155,5 +155,17 @@ $height: 100px;
         .buttonText {
             font-size: 2rem;
         }
+
+        &.magic-3, &.magic-4 {
+            mask-size: 100% 100%, 200vh 200vh;
+        }
+        
+        &.magic-3 {
+            mask-position: 0%, 0% -70%;
+        }
+        
+        &.magic-4 {
+            mask-position: 0%, 50% 50%;
+        }
     }
 }

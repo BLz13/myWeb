@@ -5,6 +5,11 @@
     transition: height 500ms;
     overflow: hidden;
     height: 110vw;
+
+    img,
+    svg {
+        display: none;
+    }
 }
 
 .cvData {
@@ -307,6 +312,10 @@
             font-family: $font-backup;
         }
 
+        svg path:nth-child(2) {
+            fill: var(--alt);
+        }
+
         > ul {
             display: flex;
             flex-flow: row wrap;
@@ -537,7 +546,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
     .rawContent {
         height: auto;
         min-height: 100dvh;
@@ -545,55 +554,70 @@
 
     .cvData {
         left: 0;
-        width: 100%;
-        max-width: 100%;
         margin: 0;
-        padding: 0 4vw;
+        padding: 0;
         box-sizing: border-box;
 
-        &.shorten,
-        &.expanded {
-            width: 100%;
-            margin-left: 0;
+        &.shorten {}
+
+        &.expanded,
+        &.shorten {
+            margin-left: 2vw;
+            width: calc(-2vw + 100vw - 2vw - 15vw);
         }
 
         > div {
             padding: 4dvh 18px;
-            gap: 24px;
+            gap: 25px;
             margin-top: 24px;
         }
 
         #start {
             margin-top: 16px;
-            gap: 0.8rem;
+            gap: 30px 0px;
+            display: grid;
+            grid-template-columns: 0.3fr 0.7fr;
 
             svg {
-                height: 14vh;
+                grid-column: 1;
+                grid-row: span 2;
+                height: 100%;
+                width: 100%;
             }
 
             .name {
-                font-size: 2.3rem;
+                grid-column: 2;
+                grid-row: 1;
+                font-size: 2rem;
+                line-height: 2rem;
             }
 
             .title {
-                margin-bottom: 16px;
+                grid-column: 2;
+                grid-row: 2;
+                margin-bottom: 0;
                 font-size: 1.2rem;
+                line-height: 1.3rem;
             }
 
             p {
+                grid-column: span 2;
                 max-width: 100%;
                 font-size: 1rem;
             }
         }
 
         #contact {
-            flex-flow: column;
-            justify-content: center;
+            display: grid;
+            grid-template: 1fr 1fr / 1fr 1fr; 
+            justify-items: center;
+            align-content: center;
             gap: 20px;
+            padding: 20px;
 
             p,
             a {
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
 
             svg {
@@ -601,11 +625,69 @@
             }
         }
 
+        
+        #experience {
+            > ul > li {
+                align-items: center;
+
+                > p {
+                    text-align: center;
+                }
+                
+                > p:nth-child(2) {
+                    margin-top: 10px;
+                }
+
+                h4 {
+                    align-self: flex-start;
+                }
+            }
+        }
+
         #experience,
         #education,
         #skills {
+            gap: 20px;
+
             > ul {
-                gap: 18px;
+                gap: 35px;
+                padding-left: 0px;
+
+                > li {
+                    padding-left: 0px;
+                    align-items: center;
+
+                    > h3,
+                    > p {
+                        line-height: 120%;
+                        text-align: center;
+                    }
+
+                    > p:nth-child(4) {
+                        margin-top: 10px;
+                        display: flex;
+                        flex-flow: column nowrap;
+                        align-items: center;
+                        gap: 0px;
+
+                        svg {
+                            height: 1rem;
+                            width: 1rem;
+
+                            path:nth-child(2) {
+                                fill: var(--alt);
+                            }
+                        }
+                    }
+
+                    ul {
+                        gap: 10px;
+
+                        > li {
+                            list-style: inside;
+                        }
+                    }
+                }
             }
         }
 
@@ -614,8 +696,15 @@
                 grid-template-columns: 1fr;
 
                 > li {
-                    &:nth-last-child(1) {
-                        grid-column: span 1;
+                    align-items: flex-start;
+                    grid-column: 1;
+
+                    > h3 {
+                        text-align: left;
+                    }
+
+                    > ul {
+                        align-items: flex-start;
                     }
                 }
             }
@@ -630,16 +719,15 @@
             }
 
             > ul {
-                flex-direction: column;
+                flex-flow: column nowrap;
 
                 > li {
-                    flex-basis: 100%;
-                    height: auto;
-                    min-height: 0;
-                    padding: 20px 18px;
+                    flex: 0 0 auto;
+                    height: 50vh;
+                    padding: 20px;
 
                     &.expanded {
-                        height: auto;
+                        height: 100vh;
 
                         .gallery {
                             height: 45vh;
@@ -647,12 +735,20 @@
                     }
 
                     &.minimized {
-                        height: auto;
-                        padding: 16px 18px;
+                        flex: 0 0 auto;
+                        height: 50vh;
+                        padding: 20px;
 
                         .project-header {
                             width: 100%;
                             transform: none;
+                        }
+
+                        .description {
+                            opacity: 1;
+                            height: 65%;
+                            transform: none;
+                            -webkit-line-clamp: 12;
                         }
                     }
 
@@ -661,8 +757,8 @@
                     }
 
                     .description {
-                        height: auto;
-                        min-height: 0;
+                        height: 65%;
+                        -webkit-line-clamp: 12;
                     }
                 }
             }
@@ -670,33 +766,6 @@
 
         .slide-down {
             margin-top: 10px;
-        }
-    }
-}
-
-@media (max-width: 480px) {
-    .cvData {
-        padding: 0 5vw;
-
-        h2 {
-            font-size: 1.8rem;
-        }
-
-        > div {
-            padding: 4dvh 14px;
-        }
-
-        #start {
-            .name {
-                font-size: 2rem;
-            }
-        }
-
-        #contact {
-            p,
-            a {
-                font-size: 0.9rem;
-            }
         }
     }
 }
