@@ -30,3 +30,33 @@
     }
     
 }
+
+@media (max-width: 768px) {
+    .user-ui {
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        pointer-events: none;
+
+        > * {
+            pointer-events: auto;
+        }
+    }
+
+    .user-ui .section-right {
+        right: 12px;
+        top: 12px;
+        width: auto;
+        margin: 0;
+    }
+
+    .user-ui .section-left {
+        left: 12px;
+        bottom: 12px;
+        top: auto;
+        width: auto;
+        height: auto;
+        margin: 0;
+        gap: 12px;
+    }
+}

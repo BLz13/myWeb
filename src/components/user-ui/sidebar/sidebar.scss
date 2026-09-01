@@ -217,7 +217,7 @@ $section-height: 80px;
             }
 
         }
-        
+
         &:nth-child(11) {
 
             &:hover > a {
@@ -247,6 +247,22 @@ $section-height: 80px;
 
     }    
     
+}
+
+@media (max-width: 768px) {
+    .sidebar-container {
+        right: 12px;
+        top: 52px;
+        width: min(82vw, 360px);
+        height: min(76dvh, 520px);
+        margin: 0;
+        grid-template-rows: 4dvh repeat(7, minmax(52px, 1fr)) auto repeat(2, 48px);
+        border-radius: 16px;
+
+        &.closed {
+            transform: translateX(calc(100vw + 40px));
+        }
+    }
 }
 
 @keyframes hideText {

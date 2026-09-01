@@ -99,3 +99,10 @@ $height: 40px;
 
     }
 }
+
+@media (max-width: 768px) {
+    .sidebar-button-container {
+        width: 34px;
+        height: 34px;
+    }
+}

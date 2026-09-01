@@ -1,43 +1,23 @@
 import "./gallery.scss";
 
-import ChevronLeft from "../../assets/svg/chevron-left.svg?react";
-import ChevronRight from "../../assets/svg/chevron-right.svg?react";
-import { useRef } from "react";
+import { useState } from "react";
 
-export default function Gallery({ imgsData, touch = true }) {
+export default function Gallery({ imgsData, expanded = true }) {
 
-    const galleryRef = useRef(null);
-
-    const images = imgsData?.alts ?? [];
+    const allImages = imgsData?.alts ?? [];
+    const images = expanded ? allImages : allImages.slice(0, 1);
     const imagePath = imgsData?.link ?? "";
 
-    const scrollGallery = (direction) => {
-        const gallery = galleryRef.current;
+    const [orientations, setOrientations] = useState({});
 
-        if (!gallery) return;
+    const handleImageLoad = (index, event) => {
+        const { naturalWidth, naturalHeight } = event.target;
+        const orientation = naturalWidth >= naturalHeight ? "horizontal" : "portrait";
 
-        const amount = gallery.clientWidth * 0.8;
-
-        gallery.scrollBy({
-            left: direction === "left" ? -amount : amount,
-            behavior: "smooth",
+        setOrientations((prev) => {
+            if (prev[index] === orientation) return prev; // evita un re-render innecesario
+            return { ...prev, [index]: orientation };
         });
-    };
-
-    const handleWheel = (e) => {
-        const gallery = galleryRef.current;
-
-        if (!gallery) return;
-
-        /*
-         * Allow normal vertical scrolling to continue when
-         * the user isn't actually scrolling horizontally.
-         */
-        if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) {
-            return;
-        }
-
-        gallery.scrollLeft += e.deltaX;
     };
 
     if (!images.length) {
@@ -46,44 +26,20 @@ export default function Gallery({ imgsData, touch = true }) {
 
     return (
         <div className="gallery">
-
-            <button
-                type="button"
-                className="gallery-control gallery-control-left"
-                onClick={() => scrollGallery("left")}
-                aria-label="Previous image"
-            >
-                <ChevronLeft />
-            </button>
-
-            <div
-                ref={galleryRef}
-                className={`gallery-cnt ${touch ? "touch" : ""}`}
-                onWheel={handleWheel}
-            >
+            <div className="gallery-cnt">
                 {images.map((alt, i) => (
-                    <figure
-                        className="image-cnt"
-                        key={`${alt}-${i}`}
+                    <span
+                        className={`image-cnt ${orientations[i] ?? ""}`}
+                        key={i}
                     >
                         <img
                             src={`${imagePath}${i + 1}.png`}
                             alt={alt}
-                            draggable="false"
+                            onLoad={(e) => handleImageLoad(i, e)}
                         />
-                    </figure>
+                    </span>
                 ))}
             </div>
-
-            <button
-                type="button"
-                className="gallery-control gallery-control-right"
-                onClick={() => scrollGallery("right")}
-                aria-label="Next image"
-            >
-                <ChevronRight />
-            </button>
-
         </div>
     );
 }

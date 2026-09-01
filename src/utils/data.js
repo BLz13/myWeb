@@ -6,8 +6,8 @@ export const SECTIONS = {
 export const LINKS = {
   github: { id: "github", link: "https://github.com/BLz13" },
   cv: { 
-    en: { id: "cvEN", text:"download my resume from google drive", link: "https://drive.google.com/" },
-    es: { id: "cvES", text:"descarga mi curriculum de google drive", link: "https://drive.google.com/" }
+    en: { id: "cvEN", text:"download my resume from google drive", link: "https://drive.google.com/file/d/1S22_ZkQ5S1A06kwKrI5OAMKP24rlxtpJ/view?usp=drive_link" },
+    es: { id: "cvES", text:"descarga mi curriculum de google drive", link: "https://drive.google.com/file/d/1aahTUe_Lr6RlBVbCt5HzIXUBD9TYvj4q/view?usp=drive_link" }
   }
 };
 
@@ -306,33 +306,15 @@ export const TEXT = {
         imgs : {
           link : "/images/projects/note-it/note-it-",
           alts : [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""          
-
+            "App's homepage",
+            "Demonstration of use",
+            "Demonstration of how to upload an image",
+            "Upload of an test image",
+            "Home page of the app fill with notes",
+            "Demonstration of hoe to delete a note",
+            "An image note being shown",
+            "Home page on dark mode",
+            '"To Do" section on dark mode'
           ]
         }
       },
@@ -346,36 +328,8 @@ export const TEXT = {
           "It also gave me experience working with both MongoDB/Mongoose and PostgreSQL/TypeORM, database migrations, environment configuration, API documentation with Swagger, and testing. I'm keeping it in the portfolio because it represents an important step in my progression from frontend-focused projects toward fullstack development and backend architecture."
         ],
         imgs : {
-          link : "/images/projects/coffee-cap/coffee-cap-",
-          alts : [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""          
-
-          ]
+          link : "",
+          alts : []
         }
       },
       {
@@ -391,15 +345,18 @@ export const TEXT = {
           link : "/images/projects/tech-ba/tech-ba-",
           alts : [
             "Hero section of the Tech BA e-commerce homepage",
-            "Tech BA e-commerce homepage",
-            "Tech BA footer in mobile mode",
+            "Tech BA e-commerce homepage first section",
+            "Tech BA e-commerce homepage second section",
+            "Products category page on Tech BA",
             "Hero section of the Tech BA e-commerce homepage in mobile mode",
-            "Products page on Tech BA",
-            "Tech BA e-commerce homepage in mobile mode",
             "Tech BA menu in mobile mode",
+            "Tech BA e-commerce homepage first section in mobile mode",
+            "Tech BA e-commerce homepage second section in mobile mode",
+            "Tech BA footer in mobile mode",
             "Products page on Tech BA in mobile mode",
             "First section of the product page in mobile mode",
-            "Second section of the product page in mobile mode"
+            "Second section of the product page in mobile mode",
+            "Third section of the product page in mobile mode"
           ]
         }
       },
@@ -413,36 +370,8 @@ export const TEXT = {
           "The concept was straightforward: a simple web app that helps people find places with suitable food options in the city they're visiting. The challenge, however, is much more technical than the idea suggests. Working with maps can be complex or expensive, and identifying establishments with appropriate options requires a considerable amount of research. It's still a work in progress, but little by little, the idea is becoming a real application.",
         ],
         imgs : {
-          link : "/images/projects/coffee-cap/coffee-cap-",
-          alts : [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""          
-
-          ]
+          link : "",
+          alts : []
         }
       }
     ],
@@ -518,7 +447,7 @@ export const TEXT = {
           "Es otra muestra del proceso de aprendizaje y no un producto terminado, y justamente por eso quiero conservarlo: hace visible la evolución de mi trabajo.",
         ],
         imgs : {
-          link : "/images/projects/coffee-cap/coffee-cap-",
+          link : "/images/projects/miniature-forest/miniature-forest-",
           alts : [
             "Hero de la página principal",
             "Menú del sitio",
@@ -543,76 +472,30 @@ export const TEXT = {
         imgs : {
           link : "/images/projects/note-it/note-it-",
           alts : [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""          
-
+            "Página principal de la aplicación",
+            "Demostración de uso",
+            "Demostración de cómo subir una imagen",
+            "Subida de una imagen de prueba",
+            "Página principal de la aplicación llena de notas",
+            "Demostración de cómo eliminar una nota",
+            "Una nota con una imagen siendo mostrada",
+            "Página principal en modo oscuro",
+            'Sección "To Do" en modo oscuro'
           ]
         }
       },
       {
         link : "",
         github: "https://github.com/BLz13/backend-nest",
-        title : "Backend Final Project",
+        title : "Proyecto Final Curso Backend",
         description : [
           "Este fue mi proyecto final del curso de desarrollo backend, desarrollado con NestJS y TypeScript. Este proyecto representa el momento en el que pasé de aprender conceptos individuales de backend a integrarlos dentro de una aplicación más completa y modular.",
           "El proyecto está organizado en diferentes áreas principales, incluyendo autenticación, compradores, productos, órdenes, categorías, fabricantes y operadores. Utiliza DTOs, entidades, servicios, controladores, módulos de base de datos, validación y autenticación basada en JWT para organizar la aplicación y su lógica de negocio.",
           "También me permitió adquirir experiencia trabajando tanto con MongoDB/Mongoose como con PostgreSQL/TypeORM, migraciones de base de datos, configuración mediante variables de entorno, documentación de la API con Swagger y testing. Decidí mantenerlo en el portfolio porque representa un paso importante en mi evolución desde proyectos principalmente frontend hacia el desarrollo fullstack y la arquitectura backend."
         ],
         imgs : {
-          link : "/images/projects/coffee-cap/coffee-cap-",
-          alts : [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""          
-
-          ]
+          link : "",
+          alts : []
         }
       },
       {
@@ -622,21 +505,24 @@ export const TEXT = {
         description : [
           "Mi primer proyecto de gran escala como desarrollador, realizado como proyecto final de mi pasantía en Agencia Lader. A diferencia de mis primeros proyectos personales, este fue un sitio de e-commerce real desarrollado para un negocio activo, lo que implicó trabajar dentro de un ecosistema existente y, al mismo tiempo, buscar formas de personalizarlo y ampliarlo.",
           "El sitio está desarrollado principalmente con WordPress y WooCommerce, pero gran parte del trabajo fue más allá de las funcionalidades que ofrece la plataforma por defecto. Realicé numerosas modificaciones con CSS, JavaScript y PHP para adaptar la interfaz, mejorar la experiencia de usuario e implementar funcionalidades específicas del proyecto. El sitio incluye categorías de productos, páginas individuales de productos, funcionalidades de compra y carrito, diseños responsive y las diferentes secciones de contenido y comerciales necesarias para una tienda online real.",
-          "Este proyecto representa un punto importante en mi evolución porque fue mi primera oportunidad de llevar lo aprendido en proyectos experimentales más pequeños a un sitio de producción de mayor escala, con requerimientos reales, un CMS y una plataforma de e-commerce existentes, y una necesidad mucho mayor de personalización, estructura y mantenibilidad."
+          "Este proyecto representa un punto importante en mi evolución porque fue mi primera oportunidad de llevar lo aprendido en proyectos experimentales más pequeños a un sitio de producción de mayor escala, con requerimientos reales, un CMS y una plataforma de e-commerce existentes, y una necesidad mucho mayor de personalización, estructura y fácil mantenimiento."
         ],
         imgs : {
           link : "/images/projects/tech-ba/tech-ba-",
           alts : [
-            "Hero de la pagina principal del e-commerce de Tech BA",
-            "Pagina principal del e-commerce de Tech BA",
-            "Footer en modo mobile de Tech BA",
-            "Hero de la pagina principal del e-commerce de Tech BA en mobile",
-            "Pagina de productos en Tech BA",
-            "Pagina principal del e-commerce de Tech BA en modo mobile",
-            "Menu en modo mobile de Tech BA",
-            "Pagina de productos en Tech BA en mobile",
-            "Primera sección de la pagina de producto en mobile",
-            "Segunda sección de la pagina de producto en mobile"
+            "Hero de la página principal del e-commerce de Tech BA",
+            "Primera sección de la página principal del e-commerce de Tech BA",
+            "Segunda sección de la página principal del e-commerce de Tech BA",
+            "Página de categorías de productos de Tech BA",
+            "Hero de la página principal del e-commerce de Tech BA en modo mobile",
+            "Menú de Tech BA en modo mobile",
+            "Primera sección de la página principal del e-commerce de Tech BA en modo mobile",
+            "Segunda sección de la página principal del e-commerce de Tech BA en modo mobile",
+            "Footer de Tech BA en modo mobile",
+            "Página de productos de Tech BA en modo mobile",
+            "Primera sección de la página de producto en modo mobile",
+            "Segunda sección de la página de producto en modo mobile",
+            "Tercera sección de la página de producto en modo mobile"
           ]
         }
       },
@@ -650,36 +536,8 @@ export const TEXT = {
           "El concepto era sencillo: una aplicación web que permita encontrar lugares con opciones adecuadas para comer en la ciudad que estás visitando. Sin embargo, el desafío es mucho más técnico de lo que parece. Trabajar con mapas puede ser complejo o costoso, y encontrar establecimientos con opciones adecuadas requiere bastante investigación. Todavía está en desarrollo, pero poco a poco la idea se está convirtiendo en una aplicación real.",
         ],
         imgs : {
-          link : "/images/projects/coffee-cap/coffee-cap-",
-          alts : [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""          
-
-          ]
+          link : "",
+          alts : []
         }
       }
     ]
