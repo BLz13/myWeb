@@ -89,7 +89,7 @@ export default function SidebarItems({ lang }) {
                                     {github.id}
                                 </text>
                                 {isMobile ? (
-                                    <GithubLogo x="150" y="10%" height="70%" width="70" className="icon"/>
+                                    <GithubLogo x="100" y="10%" height="70%" width="70" className="icon"/>
                                 ) : (
                                     <GithubLogo x="210" y="1%" height="90%" width="70" className="icon"/>
                                 )}

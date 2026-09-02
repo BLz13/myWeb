@@ -31,7 +31,7 @@ $border-size: 2px;
         }
 
         &.es::before {
-            bottom: calc( $width - $border-size * 4 );
+            bottom: 50%;
         }
         
         &.en  {
@@ -41,7 +41,7 @@ $border-size: 2px;
             opacity: 1;
 
             &:nth-child(1) {
-                bottom: calc( $width - $border-size * 4 );
+                bottom: 50%;
             }
 
             &:nth-child(2) {
