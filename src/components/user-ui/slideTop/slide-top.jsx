@@ -3,17 +3,13 @@ import "./slide-top.scss";
 import { useEffect, useState } from "react";
 
 import ChevronUp from "../../../assets/svg/chevron-up.svg?react";
+import { useUIState } from "../../../hooks/context/useUIState";
 
 export default function SlideTop() {
+    
+    const { scrollToSection } = useUIState();
 
     const [isStartVisible, setIsStartVisible] = useState(true);
-
-    const handleTouch = () => {
-        document.getElementById("root")?.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-        });
-    };
 
     useEffect(() => {
 
@@ -47,8 +43,8 @@ export default function SlideTop() {
     return (
         <a
             className={`slide-up ${isStartVisible ? "hide" : "show"}`}
-            onClick={handleTouch}
-            onTouchEnd={handleTouch}
+            onClick={ () => scrollToSection("start")}
+            onTouchEnd={ () => scrollToSection("start")}
         >
             <ChevronUp />
             <ChevronUp />

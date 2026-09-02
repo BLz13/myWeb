@@ -111,8 +111,12 @@ export default function UIStateProvider({ children }) {
   const closeSidebar = useCallback(() => setSidebarState(false), []);
   const toggleSidebar = useCallback(() => setSidebarState(prev => !prev), []);
 
-  const scrollToSection = useCallback((id, offset = 30) => {
+  const scrollToSection = useCallback((id, defaultOffset = 30) => {
+
     const el = document.getElementById(id);
+
+    const offset = isMobile ? 15 : defaultOffset;
+
     if (!el) return;
 
     const elementPosition =
