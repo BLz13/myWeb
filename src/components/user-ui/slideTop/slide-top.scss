@@ -63,3 +63,19 @@
     }
 
 }
+
+@media only screen and (max-width: 768px) {
+    .slide-up {
+
+        &.hide {
+            transform: translateX(10vw);
+        }
+
+        svg {
+            path {
+                fill: var(--alt);
+            }
+        }
+
+    }
+}

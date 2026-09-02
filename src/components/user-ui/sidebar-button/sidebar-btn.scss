@@ -3,7 +3,6 @@
 
 $width: 40px;
 $height: 40px;
-
     
 .sidebar-button-container {
 
@@ -100,9 +99,17 @@ $height: 40px;
     }
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
     .sidebar-button-container {
-        width: 34px;
-        height: 34px;
+
+        height: auto;
+        width: 65%;
+        aspect-ratio: 1;
+
+        .sidebar-button {
+            * {
+                stroke: var(--alt);
+            }
+        }
     }
 }

@@ -1,3 +1,8 @@
+:root {
+  /* Opts the entire document into keyword animations */
+  interpolate-size: allow-keywords; 
+}
+
 * {
     margin: 0;
     padding: 0;

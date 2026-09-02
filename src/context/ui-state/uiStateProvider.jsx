@@ -25,6 +25,24 @@ function getInitialTheme() {
 export default function UIStateProvider({ children }) {
 
   const [theme, setTheme] = useState(getInitialTheme);
+  
+  const [isMobile, setIsMobile] = useState(
+      () => typeof window !== "undefined" && window.innerWidth < 1024
+  );
+    
+  useEffect(() => {
+
+      const handleResize = () => {
+          setIsMobile(window.innerWidth < 1024);
+      };
+
+      window.addEventListener("resize", handleResize);
+
+      return () => {
+          window.removeEventListener("resize", handleResize);
+      };
+
+  }, []);
 
   const toggleTheme = useCallback(() => {
     setTheme(prev => {
@@ -93,17 +111,22 @@ export default function UIStateProvider({ children }) {
   const closeSidebar = useCallback(() => setSidebarState(false), []);
   const toggleSidebar = useCallback(() => setSidebarState(prev => !prev), []);
 
-  function scrollToSection(id, offset = 30) {
+  const scrollToSection = useCallback((id, offset = 30) => {
     const el = document.getElementById(id);
     if (!el) return;
 
-    const elementPosition = el.getBoundingClientRect().top + window.scrollY;
+    const elementPosition =
+        el.getBoundingClientRect().top + window.scrollY;
 
     window.scrollTo({
-      top: elementPosition - offset,
-      behavior: "smooth",
+        top: elementPosition - offset,
+        behavior: "smooth",
     });
-  }
+
+    if (isMobile) {
+        closeSidebar();
+    }
+  }, [isMobile, closeSidebar]);
 
   const value = useMemo(() => ({
     theme,
@@ -127,7 +150,8 @@ export default function UIStateProvider({ children }) {
     sidebarState,
     openSidebar,
     closeSidebar,
-    toggleSidebar
+    toggleSidebar,
+    scrollToSection
   ]);
 
   return (

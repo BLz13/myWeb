@@ -1,7 +1,7 @@
+import { Fragment, useEffect, useState } from "react";
 import { LINKS, SECTIONS, TEXT } from "../../../utils/data.js";
 
 import CloudDownloadIcon from "../../../assets/svg/cloud-download.svg?react";
-import { Fragment } from "react";
 import GithubLogo from "../../../assets/svg/github.svg?react";
 import LinkedinLogo from "../../../assets/svg/linkedin.svg?react";
 import MailLogo from "../../../assets/svg/mail.svg?react";
@@ -33,6 +33,22 @@ export default function SidebarItems({ lang }) {
     const { contact } = TEXT;
 
     const { github } = LINKS;
+
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
+    
+    useEffect(() => {
+
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 1024);
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+
+    }, []);
 
     const sections = SECTIONS[lang].map((item, i) => {
         
@@ -72,7 +88,11 @@ export default function SidebarItems({ lang }) {
                                 <text x="10" y="50%" textAnchor="start" dominantBaseline="middle">
                                     {github.id}
                                 </text>
-                                <GithubLogo x="210" y="1%" height="90%" width="70" className="icon"/>
+                                {isMobile ? (
+                                    <GithubLogo x="150" y="10%" height="70%" width="70" className="icon"/>
+                                ) : (
+                                    <GithubLogo x="210" y="1%" height="90%" width="70" className="icon"/>
+                                )}
                             </mask>
                         </defs>
                         <rect x="0" y="0" width="100%" height="100%" mask="url(#github-mask)" fill="white" />
@@ -143,9 +163,26 @@ export default function SidebarItems({ lang }) {
                             <mask id="cv-mask" x="0" y="0" width="100%" height="100%">
                                 <rect x="0" y="0" width="100%" height="100%" fill="white" />
                                 <CloudDownloadIcon x="10" y="5%" height="90%" width="70" className="icon"/>
-                                <text x="75" y="50%" textAnchor="start" dominantBaseline="middle">
-                                    {LINKS.cv[lang].text}
-                                </text>
+                                {isMobile ? (
+                                    <text x="75" y="35%" textAnchor="start" dominantBaseline="middle">
+                                        {
+                                            LINKS?.cv[lang]?.text.split(/\s+/).map( (word, i) => (
+                                                <tspan
+                                                    key={`${word}-${i}`}
+                                                    x={i === 3 ? 75 : undefined}
+                                                    dx={i === 0 || i === 3 ? 0 : 3}
+                                                    dy={i === 3 ? 20 : 0}
+                                                >
+                                                    {word}
+                                                </tspan>
+                                            ))
+                                        }
+                                    </text>
+                                ) : (
+                                    <text x="75" y="50%" textAnchor="start" dominantBaseline="middle">
+                                        {LINKS.cv[lang].text}
+                                    </text>
+                                )}
                             </mask>
                         </defs>
                         <rect x="0" y="0" width="100%" height="100%" mask="url(#cv-mask)" fill="white" />
@@ -159,9 +196,20 @@ export default function SidebarItems({ lang }) {
                         <mask id="address-mask" x="0" y="0" width="100%" height="100%">
                             <rect x="0" y="0" width="100%" height="100%" fill="white" />
                             <PinLogo  x="10" y="0%" height="90%" width="70" className="icon"/>
-                            <text x="75" y="50%" textAnchor="start" dominantBaseline="middle">
-                                {`${TEXT.contact[lang].address.city}, ${TEXT.contact[lang].address.country}`}
-                            </text>
+                            {isMobile ? (
+                                    <text x="75" y="35%" textAnchor="start" dominantBaseline="middle">
+                                        <tspan x="75" dy="0">
+                                            {TEXT.contact[lang].address.city}
+                                        </tspan>
+                                         <tspan x="75" dy="20">
+                                            {TEXT.contact[lang].address.country}
+                                        </tspan>
+                                    </text>
+                                ) : (
+                                    <text x="75" y="50%" textAnchor="start" dominantBaseline="middle">
+                                        {`${TEXT.contact[lang].address.city}, ${TEXT.contact[lang].address.country}`}
+                                    </text>
+                                )}
                         </mask>
                     </defs>
                     <rect x="0" y="0" width="100%" height="100%" mask="url(#address-mask)" fill="white" />

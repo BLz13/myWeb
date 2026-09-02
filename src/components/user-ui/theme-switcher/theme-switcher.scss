@@ -1,8 +1,8 @@
 @use '../../../styles/colors.scss' as *;
 @use '../../../styles/fonts.scss' as *;
 
-$height: 80px;
 $width: 40px;
+$border-size: 2px;
 
 .user-ui.load .theme-switch {
     animation: loadLang 500ms;    
@@ -10,63 +10,66 @@ $width: 40px;
 
 .theme-switch {
     width: $width;
-    height: calc( $height /  2 );
+    height: auto;
+    aspect-ratio: 1;
     box-sizing: border-box;
     display: flex;
     z-index: 1;
     position: relative;
     transition: all 500ms;
-    border: var(--main) 3px solid;
     border-radius: 50px;
     overflow: hidden;
     cursor: pointer;
 
+    border: var(--main) $border-size solid;
+
     &:hover {
-        height: $height;
+        aspect-ratio: 1 / 2;
         
         &::before {
             opacity: 1;
         }
 
         &.dark::before {
-            bottom: 50%;
+            bottom: calc( $width - $border-size * 4 );
         }
         
-        &.light  {
-        }
+        &.light  {}
 
         > span {
             opacity: 1;
 
             &:nth-child(1) {
-                bottom: 50%;
+                bottom: calc( $width - $border-size * 4 );
             }
 
             &:nth-child(2) {
-                bottom: -1%;
+                bottom: calc( -1 * $border-size * 2 );
             }
         }
     }
 
     &::before {
         content: "";
-        width: $width;
-        height: calc( $height /  2 + 5px );
+        width: calc( 100% + $border-size * 4 );
+        height: auto;
+        aspect-ratio: 1;
         z-index: 4;
         pointer-events: none;
-        border: var(--main) 2px solid;
+        border: var(--main) $border-size solid;
         position: absolute;
         box-sizing: border-box;
-        left: -8%;
-        bottom: -8%;
+        left: calc( -1 * $border-size * 2 );
+        bottom: calc( -1 * $border-size * 2 );
         border-radius: 50px;
         opacity: 0;
         transition: all 300ms;
     }
 
     > span {
-        width: $width;
-        height: calc( $height / 2) ;
+        width: calc( 100% + $border-size * 4 );
+        height: auto;
+        aspect-ratio: 1;
         z-index: 5;
         align-items: center;
         justify-content: center;
@@ -79,8 +82,8 @@ $width: 40px;
         font-weight: 500;
         color: var(--main);
         position: absolute;
-        left: -8%;
-        bottom: -8%;
+        left: calc( -1 * $border-size * 2 );
+        bottom: calc( -1 * $border-size * 2 );
         border-radius: 100%;
         pointer-events: none;
 
@@ -125,4 +128,30 @@ $width: 40px;
         opacity: 1;
         transform: translateX(0vw);
     }
+}
+
+@media only screen and (max-width: 768px) {
+    
+    .theme-switch {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+        border: var(--alt) 3px solid;
+
+        &::before {
+            border: var(--alt) 2px solid;
+        }
+
+        > span {
+            color: var(--alt);
+
+            > svg {
+                path:nth-child(2) {
+                    fill: var(--alt);
+                }
+            }
+        }
+
+    }
+
 }

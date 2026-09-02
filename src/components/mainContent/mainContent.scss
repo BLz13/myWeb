@@ -340,34 +340,38 @@
                 border-radius: 20px;
                 background-color: var(--main);
 
-                &:not(:has(.gallery)) {
-                    order: 999;
-
-                    &.expanded {
-                        height: 50vh;
-
-                        .description {
-                            height: 60%;
-                        }
-
-                        ~.minimized {
+                @media only screen and (min-width: 768px) {
+                    
+                    &:not(:has(.gallery)) {
+                        order: 999;
+                        
+                        &.expanded {
                             height: 50vh;
-
+                            
+                            .description {
+                                height: 60%;
+                            }
+                            
+                            ~.minimized {
+                                height: 50vh;
+                                
+                                .project-header {
+                                    width: 45vh;
+                                }
+                            }
+                        }
+                        
+                        &.minimized {
+                            height: 100vh;
+                            
                             .project-header {
-                                width: 45vh;
+                                width: 95vh;
                             }
                         }
                     }
-                    
-                    &.minimized {
-                        height: 100vh;
 
-                        .project-header {
-                            width: 95vh;
-                        }
-                    }
                 }
-
+                    
                 &.expanded {
                     height: 100vh;
                 }
@@ -557,8 +561,17 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        opacity: 1;
+        transition: all 500ms ease-in-out;
+        z-index: 5;
 
-        &.shorten {}
+        &.expanded {
+            animation: showCV 500ms ease-in-out forwards;
+        }
+
+        &.shorten {
+            animation: hideCV 500ms ease-in-out forwards;
+        }   
 
         &.expanded,
         &.shorten {
@@ -568,52 +581,49 @@
 
         > div {
             padding: 4dvh 18px;
-            gap: 25px;
-            margin-top: 24px;
+            gap: 30px;
+            margin-top: 30px;
         }
 
         #start {
+            box-sizing: border-box;
+            height: 50vh;
+            gap: 0;
+            justify-content: space-between;
             margin-top: 16px;
-            gap: 30px 0px;
-            display: grid;
-            grid-template-columns: 0.3fr 0.7fr;
+            padding: 10%;
 
             svg {
-                grid-column: 1;
-                grid-row: span 2;
-                height: 100%;
+                height: 60px;
                 width: 100%;
             }
 
             .name {
-                grid-column: 2;
-                grid-row: 1;
                 font-size: 2rem;
                 line-height: 2rem;
             }
 
             .title {
-                grid-column: 2;
-                grid-row: 2;
                 margin-bottom: 0;
                 font-size: 1.2rem;
                 line-height: 1.3rem;
             }
 
             p {
-                grid-column: span 2;
                 max-width: 100%;
                 font-size: 1rem;
             }
         }
 
         #contact {
+            height: 35vh;
             display: grid;
             grid-template: 1fr 1fr / 1fr 1fr; 
+            box-sizing: border-box;
             justify-items: center;
             align-content: center;
-            gap: 20px;
-            padding: 20px;
+            gap: 0;
+            padding: 10%;
 
             p,
             a {
@@ -624,7 +634,6 @@
                 height: 3rem;
             }
         }
-
         
         #experience {
             > ul > li {
@@ -711,8 +720,9 @@
         }
 
         #projects {
-            gap: 24px;
-            margin-top: 24px;
+            gap: 30px;
+            margin-top: 30px;
+            margin-bottom: 30px;
 
             h2 {
                 padding: 3dvh 18px;
@@ -722,15 +732,147 @@
                 flex-flow: column nowrap;
 
                 > li {
+                    order: inherit;
                     flex: 0 0 auto;
                     height: 50vh;
                     padding: 20px;
-
+                    
                     &.expanded {
-                        height: 100vh;
+                        flex: 0 0 auto;
+
+                        .description {
+                            -webkit-line-clamp: none;
+                        }
+
+                        .project-links {
+                            flex-flow: column nowrap;
+                            height: auto;
+                            margin-bottom: 20px;
+
+                            > a > span:nth-child(1) {
+                                height: 80%;
+                            }
+                        }
 
                         .gallery {
-                            height: 45vh;
+                            height: auto;
+
+                            > div {
+                                flex-flow: column nowrap;
+
+                                > span {
+                                    width: 100%;
+                                    flex: 0 0 100%;
+                                    max-width: 100%;
+                                    order: inherit;
+                                }
+                            }
+                        }
+                    }
+
+                    &:nth-child(1) {
+                        &.expanded {
+                            height: 220vh;
+                            
+                            .description {
+                                -webkit-line-clamp: none;
+                            }
+                        }
+
+                        .description {
+                            height: 130vh;
+                            -webkit-line-clamp: 13;
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        &.expanded {
+                            height: 200vh;
+                            
+                            .description {
+                                -webkit-line-clamp: none;
+                            }
+                        }
+
+                        .description {
+                            height: 80vh;
+                            -webkit-line-clamp: 12;
+                        }
+                    }
+
+                    &:nth-child(3) {
+                        &.expanded {
+                            height: 160vh;
+                            
+                            .description {
+                                -webkit-line-clamp: none;
+                            }
+                        }
+
+                        .description {
+                            height: 80vh;
+                            -webkit-line-clamp: 14;
+                        }
+                    }
+
+                    &:nth-child(4) {
+                        &.expanded {
+                            height: 220vh;
+                            
+                            .description {
+                                -webkit-line-clamp: none;
+                            }
+                        }
+
+                        .description {
+                            height: 80vh;
+                            -webkit-line-clamp: 14;
+                        }
+                    }
+
+                    &:nth-child(5) {
+                        &.expanded {
+                            height: 130vh;
+                            
+                            .description {
+                                -webkit-line-clamp: none;
+                            }
+                        }
+
+                        .description {
+                            height: 100vh;
+                            -webkit-line-clamp: 12;
+                        }
+
+                    }
+
+                    &:nth-child(6) {
+                        &.expanded {
+                            height: 240vh;
+                            
+                            .description {
+                                -webkit-line-clamp: none;
+                            }
+                        }
+
+                        .description {
+                            height: 140vh;
+                            -webkit-line-clamp: 12;
+                        }
+                    }
+
+                    &:nth-child(7) {
+                        &.expanded {
+                            height: 140vh;
+                            
+                            .description {
+                                -webkit-line-clamp: none;
+                            }
+                        }
+
+                        .description {
+                            height: 115vh;
+                            -webkit-line-clamp: 14;
                         }
                     }
 
@@ -756,10 +898,6 @@
                         width: 100%;
                     }
 
-                    .description {
-                        height: 65%;
-                        -webkit-line-clamp: 12;
-                    }
                 }
             }
         }
