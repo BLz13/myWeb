@@ -564,10 +564,7 @@
         opacity: 1;
         transition: all 500ms ease-in-out;
         z-index: 5;
-
-        &.expanded {
-            animation: showCV 500ms ease-in-out forwards;
-        }
+        animation: showCV 500ms ease-in-out forwards;
 
         &.shorten {
             animation: hideCV 500ms ease-in-out forwards;

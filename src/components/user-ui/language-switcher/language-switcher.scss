@@ -52,7 +52,7 @@ $border-size: 2px;
 
     &::before {
         content: "";
-        width: $width;
+        width: calc( 100% + $border-size * 4 );
         height: auto;
         aspect-ratio: 1;
         z-index: 4;
@@ -68,7 +68,7 @@ $border-size: 2px;
     }
 
     > span {
-        width: $width;
+        width: calc( 100% + $border-size * 4 );
         height: auto;
         aspect-ratio: 1;
         z-index: 5;
@@ -128,10 +128,10 @@ $border-size: 2px;
         width: 100%;
         height: auto;
         aspect-ratio: 1;
-        border: var(--alt) 3px solid;
+        border: var(--alt) $border-size solid;
 
         &::before {
-            border: var(--alt) 2px solid;
+            border: var(--alt) $border-size solid;
         }
 
         > span {
