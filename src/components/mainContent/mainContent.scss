@@ -571,6 +571,7 @@
 
         &.shorten {
             animation: hideCV 500ms ease-in-out forwards;
+            pointer-events: none;
         }   
 
         &.expanded,
