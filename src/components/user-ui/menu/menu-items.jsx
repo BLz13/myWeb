@@ -16,13 +16,11 @@ export default function MenuItems({ lang }) {
             case 2 : 
             case 4 : return (
                 <Fragment key={item}>
-                    <li>
-                        <span 
+                    <li
                          onClick={ () => scrollToSection(ids[i]) }
                          onTouchEnd={ () => scrollToSection(ids[i]) }
-                        >
+                    >
                             {item}
-                        </span>
                     </li>
                     <li className="separator">
                         <svg height="100" width="100">
@@ -33,13 +31,11 @@ export default function MenuItems({ lang }) {
             )
 
             case 5: return (
-                <li key={item}>
-                    <span 
-                        onClick={ () => scrollToSection(ids[i]) }
-                        onTouchEnd={ () => scrollToSection(ids[i]) }
-                    >
-                        {item}
-                    </span>
+                <li key={item}
+                    onClick={ () => scrollToSection(ids[i]) }
+                    onTouchEnd={ () => scrollToSection(ids[i]) }
+                >
+                    {item}
                 </li>
             )
         
