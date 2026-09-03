@@ -69,7 +69,7 @@
         display: flex;
         flex-flow: column nowrap;
         border-radius: 20px;
-        padding: 5dvh 30px;
+        padding: 5vh 30px;
         margin-top: 50px;
         gap: 50px;
         transition: background 300ms;
@@ -294,7 +294,7 @@
 
         h2 {
             background-color: var(--main);
-            padding: 5dvh 30px;
+            padding: 5vh 30px;
             border-radius: 20px;
         }
 
@@ -553,7 +553,7 @@
 @media only screen and (max-width: 768px) {
     .rawContent {
         height: auto;
-        min-height: 100dvh;
+        min-height: 100vh;
     }
 
     .cvData {
@@ -578,7 +578,7 @@
         }
 
         > div {
-            padding: 4dvh 18px;
+            padding: 4vh 18px;
             gap: 30px;
             margin-top: 30px;
         }
@@ -723,7 +723,7 @@
             margin-bottom: 30px;
 
             h2 {
-                padding: 3dvh 18px;
+                padding: 3vh 18px;
             }
 
             > ul {
