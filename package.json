@@ -1,7 +1,7 @@
 {
   "name": "Bruno Lazo",
   "private": true,
-  "version": "4.0.0",
+  "version": "5.6.1",
   "type": "module",
   "scripts": {
     "dev": "vite",

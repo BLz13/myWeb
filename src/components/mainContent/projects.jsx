@@ -40,11 +40,9 @@ export default function Projects({ data, lang, sectionName }) {
             prev === key ? null : key
         );
 
-        if (isMobile) {
-            setTimeout( () => {
-                scrollToSection(key);
-            },500)
-        }
+        setTimeout( () => {
+            scrollToSection(key);
+        },500)
     };
 
     // índice del proyecto actualmente expandido, o -1 si ninguno lo está
