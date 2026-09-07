@@ -60,3 +60,19 @@
     }
 
 }
+
+@media only screen and (min-width: 769px) and (max-width: 1199px) {
+    .user-ui {
+        .section-right {
+            width: 6vw;
+            height: calc(100dvh - 40px);
+            margin: 20px 0;
+        }
+
+        .section-left {
+            width: 6vw;
+            height: calc(100dvh - 40px);
+            margin: 20px 0;
+        }
+    }
+}

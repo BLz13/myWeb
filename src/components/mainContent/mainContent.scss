@@ -922,3 +922,67 @@
         }
     }
 }
+
+@media only screen and (min-width: 769px) and (max-width: 1199px) {
+    .rawContent {
+        height: 100dvh;
+    }
+
+    .cvData {
+        left: 3vw;
+
+        &.shorten {
+            width: calc(100vw - 8vw - 34vw);
+        }
+
+        &.expanded {
+            width: calc(100vw - 6vw);
+            margin-left: 1.5vw;
+        }
+
+        > div {
+            padding: 4dvh 24px;
+            gap: 35px;
+        }
+
+        #start {
+            .name {
+                font-size: 2.3rem;
+            }
+
+            p {
+                max-width: 85%;
+            }
+        }
+
+        #contact {
+            flex-flow: row wrap;
+            gap: 20px;
+
+            p,
+            a {
+                font-size: 1rem;
+            }
+        }
+
+        #projects {
+            > ul > li {
+                height: 45dvh;
+                padding: 24px;
+
+                &.expanded {
+                    height: 80dvh;
+
+                    .gallery {
+                        height: 60dvh;
+                    }
+                }
+
+                &.minimized {
+                    height: 70dvh;
+                    padding: 0 24px;
+                }
+            }
+        }
+    }
+}

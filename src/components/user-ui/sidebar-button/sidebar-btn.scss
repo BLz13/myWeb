@@ -113,3 +113,10 @@ $height: 40px;
         }
     }
 }
+
+@media only screen and (min-width: 769px) and (max-width: 1199px) {
+    .sidebar-button-container {
+        height: 34px;
+        width: 34px;
+    }
+}

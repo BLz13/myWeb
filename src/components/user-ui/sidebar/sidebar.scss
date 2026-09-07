@@ -365,6 +365,22 @@ $section-height: 80px;
     }
 }
 
+@media only screen and (min-width: 769px) and (max-width: 1199px) {
+    .sidebar-container {
+        right: 3vw;
+        width: 34vw;
+        height: calc(100dvh - 40px);
+        margin: 20px 0;
+        grid-template-rows: 5dvh repeat(7, clamp(56px, 7vw, 72px)) auto repeat(2, 52px);
+
+        .sidebar-section {
+            .svg-text mask text {
+                font-size: 26px;
+            }
+        }
+    }
+}
+
 @keyframes hideText {
     from {
         background-color: transparent;
