@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useState } from "react";
 
 import CrossIcon from "../../assets/svg/cross.svg?react"
 import Gallery from "../gallery/gallery";

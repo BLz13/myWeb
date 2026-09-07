@@ -69,7 +69,7 @@
         display: flex;
         flex-flow: column nowrap;
         border-radius: 20px;
-        padding: 5vh 30px;
+        padding: 5dvh 30px;
         margin-top: 50px;
         gap: 50px;
         transition: background 300ms;
@@ -101,7 +101,7 @@
         margin-top: 30px;
 
         svg {
-            height: 20vh;
+            height: 20dvh;
             width: auto;
 
             #lTop,
@@ -294,7 +294,7 @@
 
         h2 {
             background-color: var(--main);
-            padding: 5vh 30px;
+            padding: 5dvh 30px;
             border-radius: 20px;
         }
 
@@ -327,7 +327,7 @@
                 flex-grow: 1;
                 flex-shrink: 1;
                 flex-basis: calc(50% - 5%);
-                height: 30vh;
+                height: 30dvh;
                 list-style: none;
                 overflow: hidden;
                 display: flex;
@@ -346,26 +346,26 @@
                         order: 999;
                         
                         &.expanded {
-                            height: 50vh;
+                            height: 50dvh;
                             
                             .description {
                                 height: 60%;
                             }
                             
                             ~.minimized {
-                                height: 50vh;
+                                height: 50dvh;
                                 
                                 .project-header {
-                                    width: 45vh;
+                                    width: 45dvh;
                                 }
                             }
                         }
                         
                         &.minimized {
-                            height: 100vh;
+                            height: 100dvh;
                             
                             .project-header {
-                                width: 95vh;
+                                width: 95dvh;
                             }
                         }
                     }
@@ -373,25 +373,25 @@
                 }
                     
                 &.expanded {
-                    height: 100vh;
+                    height: 100dvh;
                 }
 
                 &.minimized {
                     flex-grow: 1;
                     padding: 0 40px;
                     flex-basis: 10%;
-                    height: 100vh;
+                    height: 100dvh;
                     align-items: flex-start;
 
                     .project-header {
-                        width: 95vh;
+                        width: 95dvh;
                         transform: rotate(90deg);
                     }
 
                     .description {
                         opacity: 0;
                         height: 0;
-                        transform: translateY(20vh);
+                        transform: translateY(20dvh);
                     }
 
                     .project-links,
@@ -415,13 +415,13 @@
 
                     .project-links {
                         opacity: 1;
-                        height: 5vh;
+                        height: 5dvh;
                         transition-delay: 300ms;
                     }
 
                     .gallery {
                         opacity: 1;
-                        height: 75vh;
+                        height: 75dvh;
                         width: 100%;
                         transition-delay: 300ms;
                     }
@@ -553,7 +553,7 @@
 @media only screen and (max-width: 768px) {
     .rawContent {
         height: auto;
-        min-height: 100vh;
+        min-height: 100dvh;
     }
 
     .cvData {
@@ -578,30 +578,30 @@
         }
 
         > div {
-            padding: 4vh 18px;
+            padding: 4dvh 18px;
             gap: 30px;
             margin-top: 30px;
         }
 
         #start {
-            height: 50vh;
+            height: 50dvh;
             margin-top: 15px;
-            padding: 2vh 5vw;
+            padding: 2dvh 5vw;
             gap: 0;
         }
 
         #contact {
-            height: 35vh;
-            padding: 2vh 5vw;
+            height: 35dvh;
+            padding: 2dvh 5vw;
             gap: 0;
 
             svg {
-                height: 5vh;
+                height: 5dvh;
             }
         }
 
         .slide-down {
-            height: calc( 100dvh - ( 15px + 50vh + 30px + 35vh ) - 15px );
+            height: calc( 100ddvh - ( 15px + 50dvh + 30px + 35dvh ) - 15px );
             margin-top: 15px;
         }
 
@@ -740,7 +740,7 @@
             margin-bottom: 30px;
 
             h2 {
-                padding: 3vh 18px;
+                padding: 3dvh 18px;
             }
 
             > ul {
@@ -749,7 +749,7 @@
                 > li {
                     order: inherit;
                     flex: 0 0 auto;
-                    height: 50vh;
+                    height: 50dvh;
                     padding: 20px;
                     
                     &.expanded {
@@ -787,7 +787,7 @@
 
                     &:nth-child(1) {
                         &.expanded {
-                            height: 220vh;
+                            height: 220dvh;
                             
                             .description {
                                 -webkit-line-clamp: none;
@@ -795,14 +795,14 @@
                         }
 
                         .description {
-                            height: 130vh;
+                            height: 130dvh;
                             -webkit-line-clamp: 13;
                         }
                     }
 
                     &:nth-child(2) {
                         &.expanded {
-                            height: 200vh;
+                            height: 200dvh;
                             
                             .description {
                                 -webkit-line-clamp: none;
@@ -810,14 +810,14 @@
                         }
 
                         .description {
-                            height: 80vh;
+                            height: 80dvh;
                             -webkit-line-clamp: 12;
                         }
                     }
 
                     &:nth-child(3) {
                         &.expanded {
-                            height: 160vh;
+                            height: 160dvh;
                             
                             .description {
                                 -webkit-line-clamp: none;
@@ -825,14 +825,14 @@
                         }
 
                         .description {
-                            height: 80vh;
+                            height: 80dvh;
                             -webkit-line-clamp: 14;
                         }
                     }
 
                     &:nth-child(4) {
                         &.expanded {
-                            height: 220vh;
+                            height: 220dvh;
                             
                             .description {
                                 -webkit-line-clamp: none;
@@ -840,14 +840,14 @@
                         }
 
                         .description {
-                            height: 80vh;
+                            height: 80dvh;
                             -webkit-line-clamp: 14;
                         }
                     }
 
                     &:nth-child(5) {
                         &.expanded {
-                            height: 130vh;
+                            height: 130dvh;
                             
                             .description {
                                 -webkit-line-clamp: none;
@@ -855,7 +855,7 @@
                         }
 
                         .description {
-                            height: 100vh;
+                            height: 100dvh;
                             -webkit-line-clamp: 12;
                         }
 
@@ -863,7 +863,7 @@
 
                     &:nth-child(6) {
                         &.expanded {
-                            height: 240vh;
+                            height: 240dvh;
                             
                             .description {
                                 -webkit-line-clamp: none;
@@ -871,14 +871,14 @@
                         }
 
                         .description {
-                            height: 140vh;
+                            height: 140dvh;
                             -webkit-line-clamp: 12;
                         }
                     }
 
                     &:nth-child(7) {
                         &.expanded {
-                            height: 140vh;
+                            height: 140dvh;
                             
                             .description {
                                 -webkit-line-clamp: none;
@@ -886,14 +886,14 @@
                         }
 
                         .description {
-                            height: 115vh;
+                            height: 115dvh;
                             -webkit-line-clamp: 14;
                         }
                     }
 
                     &.minimized {
                         flex: 0 0 auto;
-                        height: 50vh;
+                        height: 50dvh;
                         padding: 20px;
 
                         .project-header {

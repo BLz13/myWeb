@@ -93,19 +93,19 @@ $animated-gradient: linear-gradient(
 );
 */
 
-$gradient-size: 200vw 200vh;
+$gradient-size: 200vw 200dvh;
 
 $animated-gradient: (
     background-image: linear-gradient(var(--gradient) ),
-    background-size: 200vw 200vh,
+    background-size: 200vw 200dvh,
     left: -50%,
     right: -50%,
     bottom: 0,
     top: 0
 );
 
-$min-bg-pos: -50vw 0vh;
-$max-bg-pos: 50vw -100vh;
+$min-bg-pos: -50vw 0dvh;
+$max-bg-pos: 50vw -100dvh;
 
 @keyframes slide {
   0% {
@@ -129,7 +129,7 @@ $max-bg-pos: 50vw -100vh;
   left: 0;
   z-index:-1;
   width: 99.99vw;
-  height: 99.99vh;
+  height: 99.99dvh;
   overflow: hidden;
   opacity: 1;
   transition: opacity 500ms;

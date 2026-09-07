@@ -69,13 +69,13 @@ $height: 100px;
         pointer-events: none;
 
         &~ .rawContent {
-            height: 99.99vh;
+            height: 99.99dvh;
         }
     }
 
     &.magic-3, &.magic-4 {
         width: 100vw;
-        height: 100vh;
+        height: 100dvh;
         border: none;
         margin: 0;
         padding: 0;
@@ -163,7 +163,7 @@ $height: 100px;
         }
 
         &.magic-3, &.magic-4 {
-            mask-size: 100% 100%, 200vh 200vh;
+            mask-size: 100% 100%, 200dvh 200dvh;
         }
         
         &.magic-3 {
