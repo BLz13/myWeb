@@ -1,4 +1,4 @@
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react"
 import MainContent from './components/mainContent/mainContent';
 import UIStateProvider from './context/ui-state/uiStateProvider';
 import UserUI from './components/user-ui/user-ui';
@@ -7,8 +7,6 @@ export default function App() {
 
   return (
     <>
-      <Analytics />
-
       <UIStateProvider>
 
         <UserUI />
@@ -16,6 +14,8 @@ export default function App() {
         <MainContent />
 
       </UIStateProvider>
+      
+      <Analytics />
   </>
   );
 }
